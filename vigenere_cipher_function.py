@@ -19,13 +19,13 @@ def vigenere_cipher_func(text, key):
         step += 1
 
     key_rows = [chr(x) for x in range(65, 91)]
-    message_rows = [chr(x) for x in range(65, 91)]
+    message_cols = [chr(x) for x in range(65, 91)]
 
     result = ''
     idx = 0
     for row in range(len(message)):
         idx_key = key_rows.index(key_result[idx])         # row = key
-        idx_msg = message_rows.index(message[idx])        # col = message
+        idx_msg = message_cols.index(message[idx])        # col = message
         result += tabula_recta[idx_key][idx_msg]
         idx += 1
 
@@ -33,6 +33,14 @@ def vigenere_cipher_func(text, key):
 
 
 message = input()
+key = input()
+
+print(vigenere_cipher_func(message, key))
+
+
+# message = ATTACKATDAWN
+# key = LEMON
+# Expected output: LXFOPVEFRNHR
 key = input()
 
 print(vigenere_cipher_func(message, key))
