@@ -41,11 +41,3 @@ print(vigenere_cipher_func(message, key))
 # message = ATTACKATDAWN
 # key = LEMON
 # Expected output: LXFOPVEFRNHR
-key = input()
-
-print(vigenere_cipher_func(message, key))
-
-
-# message = ATTACKATDAWN
-# key = LEMON
-# Expected output: LXFOPVEFRNHR
