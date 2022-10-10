@@ -1,2 +1,2 @@
-# Exercises-and-preparing-for-interview
+# Exercises and preparing for interview
 More exercises and interview preparation
