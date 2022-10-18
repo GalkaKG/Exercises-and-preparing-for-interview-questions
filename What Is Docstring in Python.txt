@@ -1,0 +1,28 @@
+This is one of the most frequently asked Python interview questions
+
+Docstrings are used in providing documentation to various Python modules, classes, functions, and methods. 
+
+Example:
+def add(a, b):
+    """ This function adds two numbers."""
+    nums_sum = a + b
+    return nums_sum
+
+
+result = add(10, 20)
+
+print("Accessing doctstring method 1:", add.__doc__)
+
+print("Accessing doctstring method 2:", end="")
+
+help(add)
+print(result)
+
+
+Output:
+Accessing docstring method 1: This function adds two numbers.
+Accessing docstring method 2: Help on function add-in module __main__:
+add(a, b)
+
+
+This function adds two numbers.
