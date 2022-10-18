@@ -1,0 +1,9 @@
+PEP 8, sometimes spelled PEP8 or PEP-8, is a document that provides guidelines and best practices on how to write Python code.
+It was written in 2001 by Guido van Rossum, Barry Warsaw, and Nick Coghlan.
+The primary focus of PEP 8 is to improve the readability and consistency of Python code.
+
+If you’re new to Python, it can be difficult to remember what a piece of code does a few days, or weeks, after you wrote it.
+If you follow PEP 8, you can be sure that you’ve named your variables well.
+You’ll know that you’ve added enough whitespace so it’s easier to follow logical steps in your code. 
+You’ll also have commented your code well. All this will mean your code is more readable and easier to come back to.
+As a beginner, following the rules of PEP 8 can make learning Python a much more pleasant task.
