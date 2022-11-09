@@ -5,4 +5,6 @@ It breaks tests down into three clear and distinct steps:
   - Assert: Verify the outcome(s) of the test.
   
   
-
+Act -  какво тестваш
+Arrange - при какви условия
+Assert - какво очакваш
