@@ -1,0 +1,8 @@
+Arrange/Act/Assert (AAA) is a pattern for organizing unit tests.
+It breaks tests down into three clear and distinct steps: 
+  - Arrange: Perform the setup and initialization required for the test. 
+  - Act: Take action(s) required for the test.
+  - Assert: Verify the outcome(s) of the test.
+  
+  
+
