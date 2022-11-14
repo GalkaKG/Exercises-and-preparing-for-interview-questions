@@ -17,8 +17,12 @@ In other words: You should not need to modify the code you have already written 
 “Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it”
 
 Alternatively, this can be expressed as “Derived classes must be substitutable for their base classes”.
-In (maybe) simpler words, if a subclass redefines a function also present in the parent class, a client-user should not be noticing any difference in behaviour, and it is a substitute for the base class.
+In (maybe) simpler words, if a subclass redefines a function also present in the parent class, a client-user should not be noticing any difference in behaviour,
+and it is a substitute for the base class.
 For example, if you are using a function and your colleague change the base class, you should not notice any difference in the function that you are using.
+
+Ако сменим наследника с базовия клас, нактрая трябва да имаме същата функционалност. Всеки наследник само екстендва функционалността на базовия клас 
+и не би трябвало да премахва поведение от базовия клас.
 
 
 
