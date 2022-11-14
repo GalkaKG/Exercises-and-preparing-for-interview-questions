@@ -22,7 +22,7 @@ and it is a substitute for the base class.
 For example, if you are using a function and your colleague change the base class, you should not notice any difference in the function that you are using.
 
 Ако сменим наследника с базовия клас, нактрая трябва да имаме същата функционалност. Всеки наследник само екстендва функционалността на базовия клас 
-и не би трябвало да премахва поведение от базовия клас.
+и не би трябвало да премахва поведение от базовия клас, т.е. трябва да може само да добавя.
 
 
 
