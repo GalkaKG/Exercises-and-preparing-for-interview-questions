@@ -4,27 +4,35 @@
 In other words, every component of your code (in general a class, but also a function) should have one and only one responsibility.
 As a consequence of that, there should be only a reason to change it.
 
+- Един обект клас, трябва да бъде отговорен само за една специфична функция и трябва да има само една причина да бъде променян.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 2) The Open–closed principle (OCP)
 “Software entities … should be open for extension but closed for modification”
 
 In other words: You should not need to modify the code you have already written to accommodate new functionality, but simply add what you now need.
 
+- Един клас трябва да бъде отворен за екстендване, но затворен за променяне по-този начин си подсигуряваме работещ код, който не изисква рефакториране
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 3) The Liskov substitution principle (LSP)
 “Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it”
 
 Alternatively, this can be expressed as “Derived classes must be substitutable for their base classes”.
-In (maybe) simpler words, if a subclass redefines a function also present in the parent class, a client-user should not be noticing any difference in behaviour,
-and it is a substitute for the base class.
+In (maybe) simpler words, if a subclass redefines a function also present in the parent class, a client-user should not be noticing any difference
+in behaviour, and it is a substitute for the base class.
 For example, if you are using a function and your colleague change the base class, you should not notice any difference in the function that you are using.
 
 Ако сменим наследника с базовия клас, накрая трябва да имаме същата функционалност. Всеки наследник само екстендва функционалността на базовия клас 
 и не би трябвало да премахва поведение от базовия клас, т.е. трябва да може само да добавя.
+- класовете, които се наследяват трябва да са взаимно заменяеми
+- тоест, наследяващия клас трябва да правят еднакви неща, тоест абстракция
+- това се получава с разширяване на бейс класа.
+- усещаме се, че нарушаваме принципа, като имаме методи на клас, които реално той не може/не трябва да има
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 4) The Interface Segregation Principle (ISP)
 “Many client-specific interfaces are better than one general-purpose interface”
@@ -32,10 +40,21 @@ For example, if you are using a function and your colleague change the base clas
 In the contest of classes, an interface is considered, all the methods and properties “exposed”, thus,
 everything that a user can interact with that belongs to that class.
 
-
+ - основната идея е да нямаме методи, които не използваме,
+ - това в пайтън можем да постигнем, чрез миксини
+ 
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 5) The Dependency Inversion Principle (DIP)
 “Abstractions should not depend on details. Details should depend on abstraction. High-level modules should not depend on low-level modules. 
 Both should depend on abstractions”
 
 So, that abstractions (e.g., the interface, as seen above) should not be dependent on low-level methods but both should depend on a third interface.
+
+ - трябва да пазим бащиния клас да не знае нищо за класа, който го наследява
+ - детайлите зависят на абстракцията, а не абстракцията на детайлите
+ - тоест примерно не проверяваме в парент класа isinstance
+ - тоест парента не знае нищо за наследниците
+ 
+  Dependency Injection - подчаст на Dependency Inversion
+   - инжектираме готова инстанция в класа, въпрос на контекст е дали в метод или инит
