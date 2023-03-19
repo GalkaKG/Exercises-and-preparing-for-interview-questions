@@ -1,0 +1,2 @@
+Can you explain the difference between a list and a tuple in Python?
+Answer: In Python, a list is a mutable collection of items, whereas a tuple is an immutable collection of items. This means that you can modify the contents of a list, but you cannot modify the contents of a tuple once it has been created.
