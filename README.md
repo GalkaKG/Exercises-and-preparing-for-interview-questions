@@ -1,4 +1,4 @@
 # Exercises and preparing for interview questions
-More exercises and interview preparation
+More exercises and interview preparation here:
 
---> https://data-flair.training/blogs/python-interview-questions/
+<b> --> https://data-flair.training/blogs/python-interview-questions/ </b>
