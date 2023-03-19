@@ -1,0 +1,11 @@
+ What is ORM and how does it work?
+ 
+A: ORM stands for Object-Relational Mapping.
+It is a programming technique that allows developers
+to work with a database using an object-oriented
+programming language like Python, rather than writing 
+SQL queries directly. An ORM maps the tables in a database
+to classes in the programming language, and allows developers
+to create, read, update, and delete records using simple method 
+calls on those classes. The ORM handles the translation of those method
+calls into SQL queries and executes them against the database.
