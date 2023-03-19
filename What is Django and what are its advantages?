@@ -1,8 +1,22 @@
 What is Django and what are its advantages?
 
+# Answear 1:
 Django is a web framework for Python that allows you
 to build web applications quickly and efficiently. 
 Its advantages include its built-in ORM,
 which makes working with databases easier,
 its automatic admin interface, 
 and its easy-to-use URL routing system.
+
+
+# Answear 2:
+Django is a high-level Python web framework that is
+designed for rapid development and pragmatic, clean design.
+It provides many built-in features such as a powerful ORM,
+template engine, and an admin panel. To use Django,
+you first need to install it using pip. Then, 
+you create a new Django project using the django-admin startproject command. 
+This creates a basic project structure with a settings file 
+and a URL configuration file. You can then create apps within 
+your project using the python manage.py startapp command, 
+and define models, views, and templates within those apps to build your web application.
