@@ -1,0 +1,6 @@
+What is the difference between synchronous and asynchronous programming in Python?
+
+Synchronous programming in Python is when code is executed one line at a time, 
+in order. Asynchronous programming, on the other hand, allows for code to be 
+executed out of order, which can make it more efficient and faster.
+Asyncio is a Python module that allows you to write asynchronous code.
