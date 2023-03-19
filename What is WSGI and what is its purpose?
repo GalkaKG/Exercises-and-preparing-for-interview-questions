@@ -1,0 +1,9 @@
+What is WSGI and what is its purpose?
+
+WSGI stands for Web Server Gateway Interface, 
+and it is a specification that defines how 
+web servers and web applications can communicate 
+with each other. Its purpose is to allow web servers 
+and web applications to be developed separately,
+and to make it easier to switch between different
+web servers or different web frameworks.
