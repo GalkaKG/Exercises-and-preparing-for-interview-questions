@@ -1,2 +1,0 @@
-Can you explain the concept of generators in Python?
-Answer: Generators are a type of iterable, like lists or tuples, but unlike those objects, they do not store their contents in memory. Instead, they generate their values on the fly, using a special type of function called a generator function. This makes generators very memory-efficient, especially for large data sets.
