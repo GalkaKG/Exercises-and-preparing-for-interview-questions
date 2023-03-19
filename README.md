@@ -1,4 +1,4 @@
 ## Exercises and preparing for interview questions
-<p style="color: red"><b> More exercises and interview preparation here: </b></p>
+<b> More exercises and interview preparation here: </b>
 
 --> https://data-flair.training/blogs/python-interview-questions/ 
