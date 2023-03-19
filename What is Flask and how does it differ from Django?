@@ -1,0 +1,6 @@
+What is Flask and how does it differ from Django?
+
+Flask is also a web framework for Python,
+but it is more lightweight than Django. 
+It doesn't come with as many built-in features,
+but it is more flexible and allows for more customization.
