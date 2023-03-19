@@ -1,0 +1,9 @@
+What is RESTful API and what are its characteristics?
+
+A RESTful API is an architectural style for building web
+services that allows for the creation, modification, 
+and deletion of resources using a set of predefined operations.
+Its characteristics include the use of HTTP methods
+(GET, POST, PUT, DELETE) to perform operations on resources,
+the use of URLs to identify resources,
+and the use of JSON or XML to represent data.
