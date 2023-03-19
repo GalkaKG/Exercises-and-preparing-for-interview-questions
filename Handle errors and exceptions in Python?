@@ -1,0 +1,6 @@
+How do you handle errors and exceptions in Python?
+
+In Python, errors and exceptions can be handled using 
+the try/except block. Code that may raise an exception
+is placed in the try block, and any exceptions that are 
+raised are caught and handled in the except block.
