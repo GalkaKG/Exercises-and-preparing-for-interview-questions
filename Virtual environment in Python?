@@ -1,7 +1,0 @@
-What is a virtual environment in Python?
-A virtual environment is a tool that allows 
-you to create an isolated environment for your
-Python projects.
-This is useful because it allows you to install
-packages and dependencies for one project without 
-affecting other projects on your system.
