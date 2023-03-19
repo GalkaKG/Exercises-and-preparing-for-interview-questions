@@ -1,0 +1,8 @@
+What is the purpose of pip in Python?
+
+Pip is a package manager for Python that 
+allows you to install and manage packages
+and dependencies for your Python projects.
+Pip makes it easy to install third-party
+packages and libraries that your project 
+depends on.
