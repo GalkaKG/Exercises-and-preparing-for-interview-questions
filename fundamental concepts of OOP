@@ -1,0 +1,70 @@
+Object-Oriented Programming (OOP):
+OOP is a programming paradigm that models real-world entities as objects with properties (attributes) and behaviors (methods).
+It focuses on designing software by organizing code into reusable, modular, and understandable components.
+
+Inheritance:
+Inheritance is a mechanism that allows a new class (subclass or derived class) to inherit attributes and behaviors from an existing class (superclass or base class).
+The subclass can extend or override the inherited properties and methods. It promotes code reuse and supports the "is-a" relationship between classes.
+
+Abstraction:
+Abstraction involves simplifying complex reality by modeling classes based on essential properties and behaviors. 
+It hides the implementation details and provides a clear interface for interacting with objects.
+Abstract classes define common methods that must be implemented by subclasses.
+
+Encapsulation:
+Encapsulation refers to bundling data (attributes) and methods (functions) that operate on that data into a single unit (class).
+It enforces access control to the internal state of objects, allowing only authorized interactions.
+Access modifiers like public, protected, and private help define the scope of access to attributes and methods.
+
+Polymorphism:
+Polymorphism enables objects of different classes to be treated as instances of a common superclass. 
+It allows a single interface to represent a group of related objects with varying behavior.
+Polymorphism is achieved through method overriding and method overloading.
+
+Method Overriding: A subclass can provide a specific implementation of a method inherited from its superclass.
+This allows each subclass to customize the behavior of the inherited method.
+
+Method Overloading: Python does not support traditional method overloading like some other languages.
+Instead, polymorphism in Python is often achieved by using default arguments or variable-length argument lists.
+
+Overall, these concepts provide a powerful framework for designing and implementing complex systems in a structured and organized manner. 
+Python's support for OOP enables developers to create flexible and maintainable code by encapsulating data and behavior within objects,
+promoting code reuse, and enhancing the modularity of applications.
+
+
+
+Основните концепции на Обектно-ориентираното програмиране (ООП) в Python са:
+
+Обектно-ориентирано програмиране (ООП):
+ООП е програмен парадигма, която моделира обекти от реалния свят като обекти със свойства (атрибути) и поведение (методи).
+Фокусира се върху проектирането на софтуер, като организира кода в повторно използваеми, модулни и разбираеми компоненти.
+
+Наследяване:
+Наследяването е механизъм, който позволява на нов клас (подклас или производен клас) да наследи атрибути и поведение от съществуващ клас
+(суперклас или основен клас). Подкласът може да разшири или презапише наследените свойства и методи.
+Това насърчава повторното използване на код и поддържа "е тип на" връзката между класовете.
+
+Абстракция:
+Абстракцията включва опростяване на сложната реалност, като моделира класове въз основа на съществените им свойства и поведение. 
+Тя скрива детайлите на имплементацията и осигурява ясен интерфейс за взаимодействие с обектите.
+Абстрактните класове дефинират общи методи, които трябва да бъдат имплементирани от подкласовете.
+
+Инкапсулация:
+Инкапсулацията се отнася до опаковане на данни (атрибути) и методи (функции), които работят с тези данни, в единична единица (клас).
+Тя налага контрол на достъпа до вътрешното състояние на обектите, като позволява само упълномощени взаимодействия.
+Модификатори за достъп като публичен, защитен и частен помагат за дефиниране обхвата на достъпа до атрибути и методи.
+
+Полиморфизъм:
+Полиморфизмът позволява на обекти от различни класове да бъдат третирани като инстанции на общ суперклас.
+Това позволява на един интерфейс да представлява група свързани обекти с разнообразно поведение.
+Полиморфизмът се постига чрез презаписване и презареждане на методи.
+
+Презаписване на методи: Подкласът може да предостави специфична имплементация на метод, който е наследен от суперкласа.
+Това позволява на всеки подклас да персонализира поведението на наследения метод.
+
+Презареждане на методи: В Python няма традиционно презареждане на методи, както в някои други езици.
+Вместо това, полиморфизмът в Python често се постига чрез използването на аргументи по подразбиране или списъци с променлива дължина.
+
+Обобщено, тези концепции предоставят мощен фреймуърк за дизайн и имплементация на сложни системи по структуриран и организиран начин. 
+Подкрепата на Python за ООП позволява създаването на по-ефективен и модулен код, който е по-лесен за разбиране, поддържане и разширение.
+Това прави Python един от най-популярните и предпочитани езици за програмиране, особено за разработка на големи и сложни приложения.
