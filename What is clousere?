@@ -1,0 +1,10 @@
+A closure in Python is a function object that has access to variables in its enclosing (containing) scope, even after the scope has finished executing.
+This allows a function to "remember" values from its outer scope even if they are no longer in memory. 
+Closures are often used to create functions with behavior that depends on some external context, and they are particularly useful for creating decorators, 
+callback functions, and more advanced programming techniques.
+
+
+Затваряне (closure) в Python е функция, която "запомня" променливи от външната си област на видимост, дори след като тази област е приключила своето изпълнение.
+Това позволява на функцията да има достъп до тези променливи, дори когато те не са в обхвата на функцията.
+Затварянията се използват за съхранение на контекстна информация и са полезни за създаване на функции, които могат да поддържат състояние между извикванията си.
+Този механизъм често се използва в програмирането с функции от по-висок ред, декоратори и в областта на асинхронното програмиране.
