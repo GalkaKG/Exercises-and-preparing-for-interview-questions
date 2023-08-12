@@ -4,3 +4,9 @@ A decorator is a special type of function that
 can modify the behavior of another function or class.
 Decorators are often used to add functionality to
 functions or classes without modifying their original code.
+
+Декораторът е специален вид функция, 
+която може да модифицира поведението на друга функция или клас. 
+Декораторите се използват често,
+за да добавят функционалност към функции или класове, 
+без да променят техния оригинален код.
