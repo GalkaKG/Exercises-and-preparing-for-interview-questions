@@ -1,0 +1,18 @@
+Duck typing is a concept in programming languages that focuses on whether an object's behavior is compatible with a specific operation, rather than its explicit type or class. 
+The term "duck typing" comes from the saying, "If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck."
+
+In other words, if an object can perform the required methods or operations, it is considered to be of the required type, regardless of its actual class or inheritance hierarchy. 
+This allows for flexible and dynamic programming, as you can work with different objects that exhibit similar behavior without worrying about their precise types.
+
+Duck typing is commonly associated with dynamically typed languages like Python, where the focus is on what an object can do rather than what it is. 
+It promotes code reusability and flexibility by allowing developers to create more generic and adaptable functions and classes.
+
+
+"Duck typing" е концепция в програмирането, която се фокусира върху това дали поведението на обекта е съвместимо с конкретна операция, вместо на неговия точен тип или клас.
+Терминът "duck typing" идва от поговорката "Ако изглежда като пате, плува като пате и кряска като пате, то вероятно е пате."
+
+Изразът означава, че ако обект може да изпълни необходимите методи или операции, се смята, че той е от необходимия тип, независимо от фактическия му клас или наследствената му йерархия. 
+Това позволява гъвкаво и динамично програмиране, тъй като можете да работите с различни обекти, които проявяват подобно поведение, без да се притеснявате за техните точни типове.
+
+"Дuck typing" се свързва предимно с динамични езици като Python, където акцентът е върху това, какво обектът може да прави, а не какъв е. 
+Тя насърчава повторната употреба на кода и гъвкавостта, като позволява на разработчиците да създават по-общи и приспособяеми функции и класове.
