@@ -49,6 +49,35 @@ promoting code reuse, and enhancing the modularity of applications.
 Тя скрива детайлите на имплементацията и осигурява ясен интерфейс за взаимодействие с обектите.
 Абстрактните класове дефинират общи методи, които трябва да бъдат имплементирани от подкласовете.
 
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+# Примерно използване на абстракцията
+shapes = [Circle(5), Rectangle(4, 6)]
+
+for shape in shapes:
+    print(f"Area: {shape.area()}")
+
+
 Инкапсулация:
 Инкапсулацията се отнася до опаковане на данни (атрибути) и методи (функции), които работят с тези данни, в единична единица (клас).
 Тя налага контрол на достъпа до вътрешното състояние на обектите, като позволява само упълномощени взаимодействия.
@@ -58,6 +87,30 @@ promoting code reuse, and enhancing the modularity of applications.
 Полиморфизмът позволява на обекти от различни класове да бъдат третирани като инстанции на общ суперклас.
 Това позволява на един интерфейс да представлява група свързани обекти с разнообразно поведение.
 Полиморфизмът се постига чрез презаписване и презареждане на методи.
+
+class Animal:
+    def speak(self):
+        pass
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+class Duck(Animal):
+    def speak(self):
+        return "Quack!"
+
+# Създаваме списък с различни животни
+animals = [Dog(), Cat(), Duck()]
+
+# Итерираме през списъка и извикваме метода speak на всяко животно
+for animal in animals:
+    print(animal.speak())
+
 
 Презаписване на методи: Подкласът може да предостави специфична имплементация на метод, който е наследен от суперкласа.
 Това позволява на всеки подклас да персонализира поведението на наследения метод.
