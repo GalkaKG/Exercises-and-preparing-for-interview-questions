@@ -6,3 +6,10 @@ their contents in memory. Instead, they generate their
 values on the fly, using a special type of function called
 a generator function. This makes generators very 
 memory-efficient, especially for large data sets.
+
+Генераторите са вид итерируеми обекти, подобни на списъци или кортежи,
+но в отличие от тези обекти те не съхраняват съдържанието си в паметта. 
+Вместо това те генерират своите стойности на летище, използвайки специален вид функция, 
+наречена генераторна функция.
+Това прави генераторите изключително ефективни по отношение на използваната памет,
+особено за големи данни.
