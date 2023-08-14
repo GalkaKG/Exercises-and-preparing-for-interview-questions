@@ -1,0 +1,19 @@
+The concept of iterators in Python revolves around the idea
+of providing a way to access the elements of a collection
+(such as a list, tuple, or dictionary) one at a time, 
+without exposing the underlying structure of the collection.
+Iterators allow you to iterate over the elements of
+a sequence or container without needing to know how it's implemented.
+
+In Python, an iterator is an object that implements 
+two methods: __iter__() and __next__(). 
+The __iter__() method returns the iterator object itself,
+and the __next__() method returns the next value from the sequence.
+When there are no more items to be returned,
+the __next__() method raises the StopIteration exception.
+my_list = [1, 2, 3, 4, 5]
+my_iterator = iter(my_list)
+
+print(next(my_iterator))  # Outputs 1
+print(next(my_iterator))  # Outputs 2
+print(next(my_iterator))  # Outputs 3
