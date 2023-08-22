@@ -7,24 +7,7 @@ QuickSort
 - Stable: Depends
 - Method: Partitioning
 
-Code exaples:
-# 1
-def quick_sort(nums, start, end):
-    if start >= end:
-        return
-    pivot, left, right = start, start + 1, end
-    while left <= right:
-        if nums[left] > nums[pivot] > nums[right]:
-            nums[left], nums[right] = nums[right], nums[left]
-        if nums[left] <= nums[pivot]:
-            left += 1
-        if nums[right] >= nums[pivot]:
-            right -= 1
-    nums[pivot], nums[right] = nums[right], nums[pivot]
-    quick_sort(nums, start, right - 1)
-    quick_sort(nums, right + 1, end)
-
-# 2
+Code exaple:
 def quick_sort(arr):
     if len(arr) <= 1:
         return arr
@@ -40,3 +23,16 @@ def quick_sort(arr):
 unsorted_list = [3, 6, 8, 10, 1, 2, 1]
 sorted_list = quick_sort(unsorted_list)
 print(sorted_list)
+
+
+Merge Sort
+-----------
+- Merge sort is efficient sorting algorithm 
+- Divide the list into sub-lists (typically 2 sub-lists)
+    1. Sort each sub-list (recursively call merge-sort)
+    2. Merge the sorted sub-lists into a single list
+- Memory: O(n) / O(n*log(n))
+- Time: O(n*log(n))
+- Highly parallelizable on multiple cores / machines -> up to O(log(n))
+
+Code exaple:
