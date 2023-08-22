@@ -1,0 +1,42 @@
+QuickSort
+----------
+- efficient sorting algorithm
+- Choose a pivot; move smaller elements left & larger right; sort left & right
+- Memory: O(log(n)) stack space (recursion)
+- Time: O(n2) when the pivot element divides the array into two unbalanced sub-arrays (huge difference in size)
+- Stable: Depends
+- Method: Partitioning
+
+Code exaples:
+# 1
+def quick_sort(nums, start, end):
+    if start >= end:
+        return
+    pivot, left, right = start, start + 1, end
+    while left <= right:
+        if nums[left] > nums[pivot] > nums[right]:
+            nums[left], nums[right] = nums[right], nums[left]
+        if nums[left] <= nums[pivot]:
+            left += 1
+        if nums[right] >= nums[pivot]:
+            right -= 1
+    nums[pivot], nums[right] = nums[right], nums[pivot]
+    quick_sort(nums, start, right - 1)
+    quick_sort(nums, right + 1, end)
+
+# 2
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    
+    return quick_sort(left) + middle + quick_sort(right)
+
+# Example usage
+unsorted_list = [3, 6, 8, 10, 1, 2, 1]
+sorted_list = quick_sort(unsorted_list)
+print(sorted_list)
