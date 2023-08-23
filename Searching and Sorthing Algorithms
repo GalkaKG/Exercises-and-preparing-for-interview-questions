@@ -100,6 +100,25 @@ if __name__ == "__main__":
     bubble_sort(unsorted_array)
     print("Sorted array:", unsorted_array)
 
+Insertion Sort
+---------------
+– simple, but inefficient algorithm
+- Move the first unsorted element left to its place
+- Memory: O(1)
+- Time: O(n2)
+- Stable: Yes
+- Method: Insertion
+Code Example:
+nums = [int(x) for x in input().split()]
+
+for i in range(1, len(nums)):
+    for j in range(i, 0, -1):
+        if nums[j] < nums[j - 1]:
+            nums[j], nums[j - 1] = nums[j - 1], nums[j]
+        else:
+            break
+
+print(*nums, sep=" ")
 
 
 QuickSort
