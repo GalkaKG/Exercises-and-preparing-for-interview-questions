@@ -45,6 +45,36 @@ if __name__ == "__main__":
         print(f"Element {target} not found in the array.")
 
 
+Selection Sort
+---------------
+- simple, but inefficient algorithm
+- Swap the first with the min element on the right, then the second, etc.
+- Memory: O(1)
+- Time: O(n2)
+- Stable: No
+- Method: Selection
+Example Code:
+def selection_sort(arr):
+    n = len(arr)
+    
+    for i in range(n - 1):
+        min_index = i
+        
+        # Find the index of the minimum element in the unsorted portion
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        
+        # Swap the minimum element with the first element of the unsorted portion
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+
+# Example usage
+if __name__ == "__main__":
+    unsorted_array = [64, 34, 25, 12, 22, 11, 90]
+    selection_sort(unsorted_array)
+    print("Sorted array:", unsorted_array)
+
+
 
 QuickSort
 ----------
