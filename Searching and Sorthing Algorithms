@@ -11,6 +11,39 @@ for each item in the list:
         return the item's location
     return nothing
 
+Binary search
+--------------
+- finds an item within an ordered data structure
+- At each step, compare the input with the middle element
+- The algorithm repeats its action to the left or right sub-structure
+- Average performance: O(log(n))
+Example Code:
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    
+    while left <= right:
+        mid = (left + right) // 2
+        
+        if arr[mid] == target:
+            return mid  # Element found at index mid
+        elif arr[mid] < target:
+            left = mid + 1  # Search in the right half
+        else:
+            right = mid - 1  # Search in the left half
+    
+    return -1  # Element not found
+
+# Example usage
+if __name__ == "__main__":
+    sorted_array = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+    target = 10
+    index = binary_search(sorted_array, target)
+    
+    if index != -1:
+        print(f"Element {target} found at index {index}.")
+    else:
+        print(f"Element {target} not found in the array.")
+
 
 
 QuickSort
