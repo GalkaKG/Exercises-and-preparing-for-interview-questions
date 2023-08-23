@@ -75,6 +75,32 @@ if __name__ == "__main__":
     print("Sorted array:", unsorted_array)
 
 
+Bubble sort
+-------------
+– simple, but inefficient algorithm
+- Swaps to neighbor elements when not in order until sorted
+- Memory: O(1)
+- Time: O(n2)
+- Stable: Yes
+- Method: Exchanging
+Example Code:
+def bubble_sort(arr):
+    n = len(arr)
+    
+    for i in range(n - 1):
+        # Last i elements are already in place, no need to check them
+        for j in range(n - 1 - i):
+            if arr[j] > arr[j + 1]:
+                # Swap the elements if they are in the wrong order
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+# Example usage
+if __name__ == "__main__":
+    unsorted_array = [64, 34, 25, 12, 22, 11, 90]
+    bubble_sort(unsorted_array)
+    print("Sorted array:", unsorted_array)
+
+
 
 QuickSort
 ----------
