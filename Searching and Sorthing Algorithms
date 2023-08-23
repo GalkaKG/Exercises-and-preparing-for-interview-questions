@@ -1,3 +1,18 @@
+Linear search
+--------------
+- finds a particular value in a list
+- Checking every one of the elements
+- One at a time, in sequence
+- Until the desired one is found
+- Worst & average performance: O(n)
+Pseudo code:
+for each item in the list:
+    if that item has the desired value,
+        return the item's location
+    return nothing
+
+
+
 QuickSort
 ----------
 - efficient sorting algorithm
