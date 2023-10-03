@@ -1,0 +1,29 @@
+Monkey patching is a programming technique used in dynamically typed languages like Python, Ruby, and JavaScript.
+It involves modifying or extending the behavior of existing classes, modules, or functions at runtime without altering their source code.
+Monkey patching allows developers to change or enhance the behavior of built-in or third-party libraries to meet specific requirements or fix issues.
+
+Here are some key points about monkey patching:
+
+1. **Dynamic Modification:** Monkey patching is all about making changes to code dynamically during runtime.
+This can involve adding new methods, modifying existing methods, or altering the behavior of classes and functions.
+
+2. **Use Cases:** Monkey patching is often used to correct bugs or limitations in third-party libraries without waiting for an official fix.
+It can also be employed to add new features or customize the behavior of existing code.
+
+3. **Pros:**
+   - Immediate Problem Solving: Monkey patching allows developers to address issues promptly, even if they don't have control over the original code.
+   - Flexibility: It offers flexibility to adapt and extend existing code to suit specific project requirements.
+
+4. **Cons:**
+   - Maintenance Challenges: Monkey patches can lead to code that is harder to maintain and debug, as the behavior of core or third-party code may not be obvious.
+   - Compatibility Issues: Changes made through monkey patching may lead to compatibility problems with future library updates.
+   - Potential Side Effects: Modifying existing code at runtime can introduce unexpected side effects and break other parts of the application.
+
+5. **Best Practices:**
+   - Use monkey patching as a last resort when no other clean solution is available.
+   - Document patches thoroughly to make their purpose and implications clear to other developers.
+   - Consider alternative approaches, such as subclassing or using decorators, before resorting to monkey patching.
+
+It's important to exercise caution when applying monkey patches, as they can lead to code that is harder to maintain and understand.
+In many cases, cleaner and more maintainable solutions can be found through proper design and architecture without resorting to dynamic modifications.
+
