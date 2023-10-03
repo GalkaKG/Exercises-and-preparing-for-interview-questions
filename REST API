@@ -1,0 +1,45 @@
+REST API (Representational State Transfer Application Programming Interface) е стандартен начин за проектиране и изграждане на уеб услуги,
+които са лесни за използване и разширение.
+REST е архитектурен стил за създаване на уеб услуги, който използва HTTP протокола за комуникация.
+
+Основните принципи на REST включват:
+
+Ресурси: Всичко в системата се представя като ресурс, който има уникален идентификатор (URL).
+Ресурсите могат да бъдат обекти, данни, услуги и други елементи на системата.
+
+HTTP методи: REST използва основните HTTP методи като GET (за извличане на информация),
+POST (за създаване на нови ресурси), PUT (за обновление на съществуващи ресурси) и DELETE (за изтриване на ресурси).
+Тези методи са използвани за извършване на операции върху ресурсите.
+
+Представление: Ресурсите се представят в различни формати като JSON, XML или HTML, в зависимост от изискванията на клиента.
+
+Без състояние: Всяка заявка към REST API трябва да съдържа всичката необходима информация, без да се зависи от предишни заявки.
+Този принцип наричаме "без състояние" или "stateless," което означава, че сървърът не запазва информация за сесии между заявките.
+
+REST API се използва широко в уеб разработката за създаване на уеб услуги, които могат да бъдат консумирани от различни клиенти,
+като уеб приложения, мобилни приложения и други системи. Този стандарт е популярен поради своята простота, лесното разширение и съвместимост с HTTP,
+който е стандартен протокол за комуникация в интернет.
+
+*****************************************************************************************************************************************************************
+
+A REST API (Representational State Transfer Application Programming Interface) is a standardized way of designing and building web services that are easy to use and extend.
+REST is an architectural style for creating web services that uses the HTTP protocol for communication.
+
+The key principles of REST include:
+
+1. Resources: Everything in the system is represented as a resource, each with a unique identifier (URL).
+Resources can be objects, data, services, and other elements of the system.
+
+2. HTTP Methods: REST utilizes the core HTTP methods such as GET (for retrieving information), POST (for creating new resources),
+PUT (for updating existing resources), and DELETE (for deleting resources). These methods are used to perform operations on resources.
+
+3. Representation: Resources are represented in various formats such as JSON, XML, or HTML, depending on the client's requirements.
+
+4. Stateless: Each request to a REST API should contain all the necessary information without relying on previous requests.
+This principle is referred to as "statelessness," meaning the server does not store session information between requests.
+
+REST APIs are widely used in web development to create web services that can be consumed by various clients, including web applications, mobile apps, and other systems.
+This standard is popular due to its simplicity, ease of extension, and compatibility with HTTP, which is the standard protocol for communication on the internet.
+
+
+
