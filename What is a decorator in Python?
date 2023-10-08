@@ -10,3 +10,26 @@ functions or classes without modifying their original code.
 Декораторите се използват често,
 за да добавят функционалност към функции или класове, 
 без да променят техния оригинален код.
+
+Here's example:
+# Simulate a user authentication mechanism
+def is_user_logged_in():
+    return True  # For simplicity, always return True
+
+# Define a decorator function for checking user authentication
+def login_required(func):
+    def wrapper():
+        if is_user_logged_in():
+            print("User is logged in. Access granted.")
+            func()
+        else:
+            print("User is not logged in. Access denied.")
+    return wrapper
+
+# Apply the decorator to a function
+@login_required
+def restricted_function():
+    print("This function is restricted to logged-in users.")
+
+# Call the decorated function
+restricted_function()
