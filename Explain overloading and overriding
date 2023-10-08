@@ -1,0 +1,51 @@
+Overloading and overriding are two important concepts related to class methods. They are used to provide different behaviors for methods with the same name.
+
+1.Method Overloading:
+
+Method overloading refers to the ability to define multiple methods in a class with the same name but different parameters.
+This allows a class to have multiple methods with the same name but different functionality based on the input parameters.
+
+Python does not support traditional method overloading like some other programming languages (e.g., Java or C++).
+In Python, you can achieve method overloading by defining a method with default arguments or by using variable-length argument lists (*args or **kwargs).
+Here's an example:
+class Calculator:
+    def add(self, a, b):
+        return a + b
+
+    def add(self, a, b, c):
+        return a + b + c
+
+calc = Calculator()
+result1 = calc.add(1, 2)          # This will raise an error
+result2 = calc.add(1, 2, 3)       # This will work
+
+In this example, the add method is overloaded with two different sets of parameters, but only the second one will work because Python considers the last defined method.
+
+
+2.Method Overriding:
+
+Method overriding refers to the ability to provide a new implementation of a method in a subclass that is already defined in its superclass.
+It allows a subclass to provide its own specific implementation for a method inherited from the superclass.
+
+To override a method, the subclass must have a method with the same name and the same parameters as the superclass method.
+Here's an example:
+class Shape:
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14159 * self.radius ** 2
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+In this example, the area method is overridden in both the Circle and Rectangle subclasses to provide specific implementations.
