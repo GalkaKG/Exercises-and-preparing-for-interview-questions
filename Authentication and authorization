@@ -1,0 +1,21 @@
+1.Authentication:
+
+Definition: Authentication is the process of verifying the identity of a user or system to ensure that they are who they claim to be.
+Purpose: It answers the question, "Who are you?" and establishes the identity of a user or entity.
+Methods: Authentication methods include passwords, biometrics (e.g., fingerprints or facial recognition), security tokens,
+smart cards, and multi-factor authentication (MFA), where multiple methods are used for added security.
+Examples: When you log in to your email account with a username and password, you are going through the authentication process.
+The system checks if the provided credentials match the stored ones to grant access.
+
+2.Authorization:
+
+Definition: Authorization is the process of determining what actions or resources a user or system is allowed to access or perform after they have been authenticated.
+Purpose: It answers the question, "What are you allowed to do?" and enforces access control based on the user's privileges or permissions.
+Methods: Authorization is typically implemented through role-based access control (RBAC), access control lists (ACLs),
+or policies that define what actions or data a user can access.
+Examples: Suppose you've logged in to a web application. After authentication, the application checks your user role or permissions to decide whether you can view,
+edit, or delete certain data or perform specific actions. This is the authorization process.
+In summary, authentication verifies identity, ensuring users are who they claim to be, while authorization determines what actions
+or resources those authenticated users are allowed to access.
+
+Both are crucial aspects of security, and combining them helps ensure that only authorized users can perform specific actions or access certain data within a system.
