@@ -1,6 +1,6 @@
 pip install pika
 
-# In bash terminal first run the consumer
+# In the terminal first run the consumer
 python consumer.py
 
 python producer.py
