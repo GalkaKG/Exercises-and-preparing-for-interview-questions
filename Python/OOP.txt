@@ -1,0 +1,79 @@
+OOP Concepts:
+Encapsulation:
+
+What is encapsulation?
+It's the concept of bundling data (attributes) and the methods (functions) that operate on that data into a single unit or class. It also helps restrict direct access to some of an object's components and can prevent the accidental modification of data.
+Example: If you have a User class with name and age attributes, you can use getter and setter methods to control how those values are accessed and updated.
+Why is encapsulation important?
+It promotes code maintainability, hides complexity, and ensures data integrity by controlling how the data is accessed and modified.
+Abstraction:
+
+What is abstraction?
+Abstraction is the concept of hiding the complex reality while exposing only the necessary parts. It allows you to interact with objects at a high level without worrying about internal details.
+Example: A Car class may have methods like drive(), stop(), but the internal workings (e.g., engine mechanics) are abstracted away.
+Why use abstraction?
+It makes the code simpler, more modular, and easier to manage, as the user does not need to understand the internal workings.
+Inheritance:
+
+What is inheritance?
+Inheritance is a mechanism where a new class (subclass or derived class) inherits attributes and methods from an existing class (superclass or base class).
+Example: If you have a Dog class that inherits from an Animal class, the Dog class can access properties and methods of the Animal class.
+Why is inheritance useful?
+It allows for code reuse, minimizes redundancy, and establishes a relationship between classes.
+Polymorphism:
+
+What is polymorphism?
+Polymorphism is the ability of different classes to respond to the same method call in their own way. It can be method overriding (same method name, different implementation) or method overloading (same method name, but different parameters).
+Example: If you have a make_sound() method in a Dog class and a Cat class, both classes can implement make_sound() differently (dog barks, cat meows), but you can call make_sound() on any object regardless of its specific type.
+Why is polymorphism useful?
+It allows for more flexible and reusable code and simplifies code maintenance by allowing the same code to work with objects of different classes.
+SOLID Principles (Design Principles):
+
+S - Single Responsibility Principle: A class should have only one reason to change, meaning it should only have one job.
+O - Open/Closed Principle: Software entities (classes, modules, functions) should be open for extension but closed for modification.
+L - Liskov Substitution Principle: Objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program.
+I - Interface Segregation Principle: Clients should not be forced to depend on methods they do not use.
+D - Dependency Inversion Principle: High-level modules should not depend on low-level modules. Both should depend on abstractions.
+Design Patterns They Might Ask About:
+Creational Patterns:
+
+Singleton:
+What is the Singleton pattern?
+It ensures a class has only one instance and provides a global point of access to that instance.
+Example: A configuration manager in an application where only one instance should exist throughout the application lifecycle.
+Factory Method:
+What is the Factory Method pattern?
+It provides an interface for creating objects but allows subclasses to alter the type of objects that will be created.
+Example: In a game, you might have a CharacterFactory that produces different types of characters like Warrior, Mage, etc.
+Abstract Factory:
+What is the Abstract Factory pattern?
+It provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+Example: A GUI framework that can create different styles of UI components for different operating systems (e.g., buttons, text fields for Windows vs. Mac).
+Structural Patterns:
+
+Adapter:
+What is the Adapter pattern?
+It allows two incompatible interfaces to work together by providing a wrapper that adapts one interface to another.
+Example: If you have a LegacyPrinter class and a new PrinterInterface that your system expects, an adapter class can make the LegacyPrinter conform to the new interface.
+Decorator:
+What is the Decorator pattern?
+It allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class.
+Example: Adding additional functionalities like scrollable, bordered, or highlighted to a UI element.
+Facade:
+What is the Facade pattern?
+It provides a simplified interface to a complex subsystem, making it easier to use.
+Example: A HomeTheaterFacade class that simplifies the use of complex components like the DVD player, projector, and speakers.
+Behavioral Patterns:
+
+Observer:
+What is the Observer pattern?
+It defines a dependency between objects so that when one object changes its state, all dependent objects are notified and updated automatically.
+Example: A real-time news application where different users (observers) are notified when a new article (subject) is published.
+Strategy:
+What is the Strategy pattern?
+It allows selecting an algorithm at runtime. This pattern defines a family of algorithms and makes them interchangeable.
+Example: A payment processing system where you can select different payment strategies (e.g., PayPal, Credit Card, Bitcoin).
+Command:
+What is the Command pattern?
+It turns a request into a stand-alone object that contains all the information about the request.
+Example: A text editor where actions like copy, paste, and undo are encapsulated as objects.
