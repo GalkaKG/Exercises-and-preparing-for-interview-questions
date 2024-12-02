@@ -1,0 +1,106 @@
+1. Django Basics
+a) ORM (Object-Relational Mapping)
+What it is: The ORM allows you to interact with the database using Python code instead of writing raw SQL queries.
+Key concepts:
+Models: Define database tables as Python classes.
+class Note(models.Model):
+
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+Querysets: Retrieve, filter, and manipulate database records.
+
+notes = Note.objects.filter(title__icontains="important")
+note = Note.objects.get(id=1)
+
+b) Middleware
+What it is: Middleware is a series of hooks between the request and response lifecycle.
+Examples:
+Authentication middleware to check if a user is logged in.
+Custom middleware to log requests.
+
+class LogMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        print(f"Request: {request.path}")
+        response = self.get_response(request)
+        return response
+
+c) Serializers
+Used with Django REST Framework to convert data between Python objects and JSON.
+
+from rest_framework import serializers
+from .models import Note
+
+class NoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Note
+        fields = ['id', 'title', 'content', 'created_at']
+
+d) Forms
+Django Forms are used for validating and processing user input.
+
+from django import forms
+
+class NoteForm(forms.Form):
+    title = forms.CharField(max_length=100)
+    content = forms.CharField(widget=forms.Textarea)
+
+
+e) Templates
+Templates use Django's templating language to render dynamic HTML.
+
+<h1>{{ note.title }}</h1>
+<p>{{ note.content }}</p>
+<p>Created on: {{ note.created_at }}</p>
+
+2. RESTful API Creation with Django REST Framework (DRF)
+a) Views
+Class-based views:
+
+ListCreateAPIView for retrieving and creating data.
+
+from rest_framework.generics import ListCreateAPIView
+from .models import Note
+from .serializers import NoteSerializer
+
+class NoteListCreate(ListCreateAPIView):
+    queryset = Note.objects.all()
+    serializer_class = NoteSerializer
+
+
+Function-based views:
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+@api_view(['GET'])
+def get_notes(request):
+    notes = Note.objects.all()
+    serializer = NoteSerializer(notes, many=True)
+    return Response(serializer.data)
+
+
+b) URL Patterns
+Connect API endpoints to views.
+
+from django.urls import path
+from .views import NoteListCreate
+
+urlpatterns = [
+    path("notes/", NoteListCreate.as_view(), name="note-list"),
+]
+
+c) Authentication and Permissions
+Add security using DRF’s authentication system.
+from rest_framework.permissions import IsAuthenticated
+
+class NoteListCreate(ListCreateAPIView):
+    queryset = Note.objects.all()
+    serializer_class = NoteSerializer
+    permission_classes = [IsAuthenticated]
+
+
