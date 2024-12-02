@@ -1,1 +1,90 @@
+1. Understanding of RESTful API Concepts:
+- Statelessness: REST APIs are stateless, meaning each request from a client to a server must contain all the information needed to understand and process the request (no session state stored on the server).
 
+- Client-Server Architecture: RESTful APIs follow a client-server model where the client makes requests and the server provides resources or responses. The client and server operate independently.
+
+- Uniform Interface: REST defines a set of standardized methods (HTTP methods like GET, POST, PUT, DELETE) for accessing and manipulating resources, which should be uniform across your API.
+
+- Cacheable: Responses from the server must explicitly state whether they are cacheable or not, improving performance.
+
+- Layered System: REST APIs can be structured in layers, allowing the architecture to be scalable and allowing intermediary servers like proxies and gateways to be introduced.
+
+2. Experience with HTTP Methods:
+
+GET: Retrieves data from the server (e.g., retrieving a list of resources or a single resource).
+POST: Sends data to the server (e.g., creating a new resource).
+PUT: Updates an existing resource on the server (e.g., modifying a resource).
+DELETE: Deletes a resource on the server.
+PATCH: Partially updates an existing resource.
+
+3.Handling HTTP Status Codes:
+
+2xx: Success (e.g., 200 OK, 201 Created, 204 No Content).
+4xx: Client errors (e.g., 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found).
+5xx: Server errors (e.g., 500 Internal Server Error).
+
+4.Designing RESTful Endpoints:
+
+Understand how to design and organize endpoints (e.g., /users, /users/{id}, /posts).
+Use plural nouns for endpoint paths (e.g., /users/ rather than /user/).
+Follow resource-based URL patterns that represent entities in your application.
+
+5.JSON as the Data Format:
+
+Serialization: In Django, use serializers (like those in Django REST Framework) to convert Python objects into JSON (or other formats like XML) and vice versa.
+Handling JSON in React: When consuming a RESTful API in React, you'll often work with JSON data and parse it using response.json().
+
+6.Authentication and Authorization:
+
+Understand how to implement authentication (verifying user identity) and authorization (checking user permissions).
+Familiarity with JWT (JSON Web Tokens) for stateless authentication.
+Be aware of OAuth2, Basic Authentication, and Session Authentication.
+
+7.Versioning:
+Know how to version your APIs (e.g., /api/v1/, /api/v2/). It helps to avoid breaking changes for clients when updating the API.
+
+8.API Documentation:
+Understand the importance of providing clear documentation for your API (using tools like Swagger or Redoc).
+Knowledge of using OpenAPI for documenting RESTful APIs.
+
+RESTful API Explained:
+REST (Representational State Transfer) is an architectural style for designing networked applications. It is based on stateless communication and standard HTTP methods, making it easy to understand and use. In a RESTful API, resources (data entities like users, posts, etc.) are represented by URLs, and clients interact with these resources through HTTP requests.
+
+
+
+Core Principles of RESTful APIs:
+
+1.Resources:
+Resources are the objects or entities that your API operates on. In a REST API, every resource is identified by a URI (Uniform Resource Identifier).
+Example resources in a blog API could include: /posts, /comments, /users.
+
+2.Stateless Communication:
+Every HTTP request made by the client contains all the information needed to process that request. The server does not store any client context between requests (i.e., no session state).
+
+3.Representation:
+Resources can have different representations, typically in the form of JSON or XML.
+For example, a user resource could be represented as a JSON object with properties like id, name, email.
+
+4.HTTP Methods: RESTful APIs leverage standard HTTP methods to perform CRUD (Create, Read, Update, Delete) operations on resources.
+GET: Fetch a resource or collection of resources.
+POST: Create a new resource.
+PUT: Update an existing resource.
+DELETE: Remove a resource.
+
+5.HATEOAS (Hypermedia As The Engine of Application State):
+This is a constraint of REST that means the API should provide links in its responses to guide clients to related actions. While not always strictly followed, this is a best practice in some systems.
+
+6.Statelessness:
+As mentioned, each request from the client must contain all the necessary information to process it. This includes credentials or session data that might otherwise be stored server-side.
+
+
+RESTful API Flow:
+Client sends a request (e.g., a GET request to fetch user data).
+Server processes the request based on the specified method and resources.
+Server sends a response with the requested data (e.g., a list of users in JSON format).
+Django REST Framework (DRF) for Building RESTful APIs:
+Django Models: Represent your data (e.g., User, Post, Comment) in the form of models.
+Django REST Framework Serializers: Convert your Django models into JSON format for API responses and handle validation for incoming data.
+Views: DRF provides views (e.g., APIView, ModelViewSet) to handle the logic of API requests (such as listing, creating, updating, and deleting resources).
+Authentication and Permissions: DRF offers built-in support for various authentication methods (like JWT, BasicAuth) and permission checks (like IsAuthenticated, IsAdmin).
+URL Routing: DRF allows easy routing of URLs to your views using path() or url() methods, just like Django's standard routing.
