@@ -50,3 +50,98 @@ React makes useState asynchronous because:
 - It allows for better management of changes through prioritization.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+How Fetch Works (Explained for an Interview)
+fetch is a built-in JavaScript function used to make HTTP requests to servers. It is part of the browser’s Fetch API, introduced to replace older methods like XMLHttpRequest. Here's how it works and how you can explain it in an interview:
+1. What is Fetch?
+fetch is a modern, promise-based API for making network requests.
+It allows developers to perform asynchronous operations like retrieving data from APIs or sending data to a server.
+The function is built into modern browsers, making it easy to use without external libraries.
+
+How Fetch Works (Explained for an Interview)
+fetch is a built-in JavaScript function used to make HTTP requests to servers. It is part of the browser’s Fetch API, introduced to replace older methods like XMLHttpRequest. Here's how it works and how you can explain it in an interview:
+
+1. What is Fetch?
+fetch is a modern, promise-based API for making network requests.
+It allows developers to perform asynchronous operations like retrieving data from APIs or sending data to a server.
+The function is built into modern browsers, making it easy to use without external libraries.
+2. How does Fetch Work?
+a) Basic Syntax
+fetch takes a URL and returns a Promise. The Promise resolves to a Response object when the request is successful.
+fetch('https://api.example.com/data')
+    .then(response => response.json()) // Parse JSON data
+    .then(data => console.log(data)) // Work with the data
+    .catch(error => console.error('Error:', error)); // Handle errors
+URL: The endpoint where the request is sent.
+Promise: Represents the eventual completion or failure of the request.
+Response Handling: You use methods like .json(), .text(), or .blob() to parse the response.
+b) Handling Different HTTP Methods
+fetch can handle different HTTP methods (GET, POST, PUT, DELETE, etc.) by passing an options object as the second parameter.
+
+Example with POST:
+fetch('https://api.example.com/data', {
+    method: 'POST', // HTTP method
+    headers: { 'Content-Type': 'application/json' }, // Headers
+    body: JSON.stringify({ name: 'John', age: 30 }) // Request body
+})
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+3. Important Features
+a) Asynchronous Nature
+Fetch works asynchronously, meaning it doesn’t block the main thread.
+The rest of your application continues running while the fetch request is processed.
+b) Error Handling
+Fetch only rejects the promise for network errors.
+HTTP errors (e.g., 404 or 500) do not automatically throw exceptions—you need to check response.ok.
+fetch('https://api.example.com/data')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP Error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+c) CORS
+By default, fetch requests are subject to CORS (Cross-Origin Resource Sharing).
+This means you need proper permissions set on the server to allow cross-origin requests.
+
+4. Limitations of Fetch
+No Built-in Timeout: Fetch does not have a timeout feature. You can use AbortController or custom solutions.
+No Native Progress Tracking: Fetch doesn’t provide progress information during file uploads or downloads.
+
+5. Why Use Fetch Over Alternatives?
+Modern and Cleaner API: Compared to XMLHttpRequest, it’s more readable and intuitive.
+Promise-Based: Simplifies asynchronous programming.
+Integrated with Modern Tools: Works well with async/await and is extensible with middleware-like interceptors (using libraries like Axios if needed).
+
+6. Example with async/await
+For better readability, you can use async/await instead of chaining .then().
+async function fetchData() {
+    try {
+        const response = await fetch('https://api.example.com/data');
+        if (!response.ok) {
+            throw new Error(`HTTP Error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+fetchData();
+
+7. Key Points to Mention During an Interview
+- Fetch is a modern API for making HTTP requests.
+- It is promise-based and integrates well with async/await.
+- It does not automatically handle HTTP errors—you need to check response.ok.
+- CORS and lack of timeout handling can be challenges when using fetch.
+- For advanced use cases, libraries like Axios might provide additional functionality.
+
+---------------------------------------------------------------------------------------------------
