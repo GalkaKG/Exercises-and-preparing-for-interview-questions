@@ -1,0 +1,87 @@
+JWT (JSON Web Token) is an open standard used to securely transmit information between parties as a JSON object. It is commonly used for authentication and authorization in web applications. Here's a breakdown of what it is and how it works:
+
+Key Features of JWT:
+Compact and URL-safe:
+
+JWTs are compact in size, making them ideal for passing in HTTP headers or as part of URLs.
+It is URL-safe, meaning it can be safely transmitted via a URL or in an HTTP request.
+Self-contained:
+
+A JWT is self-contained, meaning it includes all the necessary information about the user (or any other claim) in the token itself.
+It doesn't require any additional data to be fetched from a database or server, improving performance and reducing server load.
+Integrity and Security:
+
+JWTs are signed using a secret key (with HMAC) or a public/private key pair (with RSA or ECDSA). This ensures the integrity of the data (i.e., it has not been tampered with).
+Optionally, they can also be encrypted to protect the contents from being read by unauthorized users.
+JWT Structure:
+A JWT consists of three parts, each separated by a dot (.):
+
+Header:
+
+The header typically consists of two parts:
+Type of the token, which is JWT.
+Signing algorithm, such as HS256 (HMAC SHA256) or RS256 (RSA SHA256).
+
+Example:
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+
+Payload:
+
+The payload contains the claims, which are the statements about an entity (typically, the user) and additional data.
+Claims can be of three types:
+Registered Claims: Standard claims like iat (issued at), exp (expiration time), sub (subject), etc.
+Public Claims: Custom claims agreed upon between the parties.
+Private Claims: Claims used to share information between parties that agree on using them.
+Example:
+
+{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "iat": 1516239022
+}
+
+Signature:
+
+The signature is used to verify that the sender of the JWT is who it says it is and to ensure that the message wasn’t changed along the way.
+It is created by taking the encoded header and payload, a secret key, and applying the signing algorithm (e.g., HS256).
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  secret)
+
+How JWT Works:
+User Login:
+
+A user logs in with their credentials (e.g., username and password).
+Generate JWT:
+
+After the user is authenticated, a JWT is generated containing claims like the user’s ID, roles, and expiration time.
+This token is signed by a server's secret key (or a public/private key pair).
+Send JWT to Client:
+
+The JWT is sent to the client (usually in the HTTP response body, or as a cookie).
+Store JWT on Client:
+
+The client stores the JWT (usually in localStorage or sessionStorage if using JavaScript, or a secure cookie).
+Subsequent Requests:
+
+The client sends the JWT in the Authorization header of subsequent requests (usually with the Bearer keyword).
+Authorization: Bearer <JWT>
+
+Verify JWT on Server:
+
+The server receives the JWT and verifies its signature using the secret key (or public key). If the signature is valid and the token hasn’t expired, the server processes the request.
+
+If the token is invalid or expired, the server rejects the request.
+
+Advantages of JWT:
+Stateless Authentication: Since the token contains all the necessary information (user details, roles, etc.), there is no need for the server to store session data. This makes it easier to scale applications because each request is self-contained.
+Cross-platform support: JWT is platform-independent and can be used with any technology stack (e.g., Django, Flask, Node.js).
+Security: JWTs are signed, making them tamper-proof. If the token is modified, its signature will no longer be valid.
+Disadvantages of JWT:
+Token Expiry: Since JWTs are stateless and carry user data, they can become problematic if a user needs to log out before the token expires. One solution is to implement token revocation mechanisms.
+Token Size: JWTs can become large if you include a lot of information in the payload, which could affect performance in scenarios with high-volume requests.
+
