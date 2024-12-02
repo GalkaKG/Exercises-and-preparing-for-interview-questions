@@ -1,0 +1,47 @@
+Why Django?
+Why choose Django for web development?
+Django is a high-level Python web framework that allows for rapid development of secure and maintainable websites. It follows the "batteries included" philosophy, providing many built-in features like authentication, ORM, and admin interfaces, which saves development time.
+It is well-suited for projects that require a robust backend with relational databases, which makes it ideal for your role in full-stack development.
+
+Why Django REST Framework (DRF)?
+DRF extends Django to support building APIs. It is feature-rich, making it easier to handle common API tasks like authentication, permissions, and serialization of data.
+DRF is an excellent choice when you need to build a RESTful API as it provides powerful views, serialization capabilities, and extensive support for authentication, including JWT, OAuth, etc.
+
+Why use serializers in DRF?
+Serializers allow you to convert complex data types (such as Django models) into native Python datatypes (e.g., dictionaries) that can easily be rendered into JSON, XML, or other content types.
+It also helps in data validation and parsing, which is crucial when handling incoming data (especially in POST requests).
+
+Why not use Flask for your project?
+
+While Flask is a micro-framework that provides flexibility and control, Django comes with more built-in features, which makes it faster for developing robust applications with complex business logic and an integrated database. 
+Flask is more suitable for smaller projects or when you want more granular control over components.
+
+Practice explaining DRF’s serialization and authentication workflows
+Serialization in DRF:
+
+Serialization converts complex data types (like Django models) into native Python types (e.g., dictionaries). This allows you to send data as JSON in your API responses. In DRF, serializers help with both converting data and validating input.
+Example: If you’re sending a list of Notes as a response from your API, a serializer will convert the Note model instance into a JSON response that the client can consume.
+Code Example:
+
+from rest_framework import serializers
+from .models import Note
+
+class NoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Note
+        fields = ['id', 'title', 'content', 'created_at']
+
+Authentication Workflow in DRF:
+
+DRF supports different types of authentication mechanisms (like Token-based and JWT authentication). These are necessary to secure your API and ensure that only authorized users can access certain endpoints.
+JWT Authentication:
+When a user logs in, they send their credentials (username/password), and if valid, they receive a JWT (JSON Web Token).
+The JWT is sent in the header of subsequent API requests for authentication.
+You can use TokenObtainPairView from DRF’s SimpleJWT library to generate and refresh tokens.
+Code Example for JWT authentication:
+
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+urlpatterns = [
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+]
