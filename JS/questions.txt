@@ -11,3 +11,13 @@ const counter = outer();
 counter(); // 1
 counter(); // 2
 
+
+Cross-Origin Requests (CORS)
+CORS (Cross-Origin Resource Sharing) is a mechanism that allows resources from one origin to be requested from another origin. The server must include appropriate CORS headers to allow these requests.
+Example:
+fetch('https://api.example.com', {
+  headers: {
+    'Access-Control-Allow-Origin': '*'
+  }
+});
+If CORS is not properly configured on the server, the browser will block the request due to security reasons.
