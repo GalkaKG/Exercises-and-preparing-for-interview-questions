@@ -1,0 +1,13 @@
+Closure: A closure is a function that remembers its lexical environment (the variables that were in scope when it was created).
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    console.log(count);
+  };
+}
+
+const counter = outer();
+counter(); // 1
+counter(); // 2
+
