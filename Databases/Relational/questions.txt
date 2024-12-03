@@ -1,0 +1,7 @@
+ACID Properties in Databases
+
+ACID stands for Atomicity, Consistency, Isolation, and Durability, which are the four properties ensuring reliable processing of database transactions.
+Atomicity: A transaction is atomic, meaning it is either fully completed or fully rolled back. If one part of the transaction fails, the entire transaction is rolled back.
+Consistency: A transaction takes the database from one valid state to another, ensuring data integrity constraints are met.
+Isolation: Transactions are isolated from each other, meaning concurrent transactions do not interfere with one another (even if they are operating on the same data).
+Durability: Once a transaction is committed, it will remain so, even in the case of system crashes.
