@@ -1,24 +1,60 @@
-# SQL Functions in Markdown Format
+1. Математически функции
+Тези функции се използват за извършване на изчисления.
 
-# Creating Sample Tables and Data
+Функция	Описание	Пример
+MOD(x, y)	Връща остатъка от деление на x на y.	MOD(10, 3) → 1
+ROUND(x, d)	Закръгля стойността x до d десетични цифри.	ROUND(123.4567, 2) → 123.46
+CEIL(x)	Връща най-малкото цяло число, по-голямо или равно на x.	CEIL(3.2) → 4
+FLOOR(x)	Връща най-голямото цяло число, по-малко или равно на x.	FLOOR(3.9) → 3
+ABS(x)	Връща абсолютната стойност на x.	ABS(-5) → 5
+POWER(x, y)	Повдига x на степен y.	POWER(2, 3) → 8
+SQRT(x)	Изчислява квадратния корен на x.	SQRT(16) → 4
+PI()	Връща стойността на числото π (пи).	PI() → 3.141592653589793
 
-# Aggregate Functions
-# -------------------
-# | **Function**    | **Description**                                              | **Example**                  |
-# |-----------------|------------------------------------------------------------|------------------------------|
-# | **`COUNT(x)`**  | Counts rows where `x` is not NULL.                          | `COUNT(*)` → Total rows      |
-# | **`SUM(x)`**    | Returns the sum of the column `x`.                          | `SUM(salary)` → Total salary |
-# | **`AVG(x)`**    | Returns the average of the column `x`.                      | `AVG(age)` → Average age     |
-# | **`MIN(x)`**    | Finds the smallest value in the column `x`.                 | `MIN(price)` → Smallest price|
-# | **`MAX(x)`**    | Finds the largest value in the column `x`.                  | `MAX(price)` → Largest price |
+##########################################################################
+2. Функции за работа със символни низове (String Functions)
+Използват се за обработка на текстови данни.
 
-# String Manipulation Functions
-# -----------------------------
-# | **Function**           | **Description**                                             | **Example**                                 |
-# |------------------------|-----------------------------------------------------------|---------------------------------------------|
-# | **`CONCAT(x, y)`**     | Combines two strings.                                      | `CONCAT('Hello', 'World')` → `HelloWorld`   |
-# | **`LENGTH(x)`**        | Returns the length of the string.                          | `LENGTH('Hello')` → 5                       |
-# | **`UPPER(x)`**         | Converts the string to uppercase.                          | `UPPER('hello')` → `HELLO`                  |
-# | **`LOWER(x)`**         | Converts the string to lowercase.                          | `LOWER('HELLO')` → `hello`                  |
-# | **`SUBSTRING(x,a,b)`** | Extracts part of the string from position `a` of length `b`| `SUBSTRING('SQL Tutorial', 5, 8)` → Tutorial|
-# | **`TRIM(x)`**          | Removes leading/trailing whitespaces.                      | `TRIM(' hello')`                    
+Функция	Описание	Пример
+CONCAT(x, y)	Обединява два текста.	CONCAT('Hello', 'World') → HelloWorld
+LENGTH(x)	Връща дължината на текста x.	LENGTH('Hello') → 5
+UPPER(x)	Превръща текста x в главни букви.	UPPER('hello') → HELLO
+LOWER(x)	Превръща текста x в малки букви.	LOWER('HELLO') → hello
+SUBSTRING(x, a, b)	Извлича част от текста x, започвайки от a и с дължина b.	SUBSTRING('SQL Tutorial', 5, 8) → Tutorial
+TRIM(x)	Премахва празни пространства в началото и края на текста.	TRIM(' Hello ') → Hello
+REPLACE(x, y, z)	Заменя всички срещания на y в текста x с z.	REPLACE('2023', '3', '4') → 2024
+LEFT(x, n)	Връща първите n символа от текста x.	LEFT('Hello', 2) → He
+RIGHT(x, n)	Връща последните n символа от текста x.	RIGHT('Hello', 3) → llo
+
+############################################################################
+3. Агрегатни функции
+Използват се за обобщаване на данни в групи.
+
+Функция	Описание	Пример
+COUNT(x)	Брои редовете, където x не е NULL.	COUNT(*) → Брой редове в таблицата
+SUM(x)	Връща сумата на стойностите в колоната x.	SUM(salary) → 150000
+AVG(x)	Изчислява средната стойност в колоната x.	AVG(age) → 32.5
+MIN(x)	Намира минималната стойност в колоната x.	MIN(price) → 1.99
+MAX(x)	Намира максималната стойност в колоната x.	MAX(price) → 99.99
+
+#################################################################################
+4. Логически и условни функции
+Помагат за вземане на решения.
+
+Функция	Описание	Пример
+CASE	Изпълнява условни проверки и връща резултат въз основа на условието.	CASE WHEN age > 18 THEN 'Adult' ELSE 'Minor' END
+IFNULL(x, y)	Връща y, ако x е NULL, иначе връща x.	IFNULL(NULL, 'Default') → Default
+COALESCE(x, y, z)	Връща първата стойност, която не е NULL.	COALESCE(NULL, NULL, 'Hello') → Hello
+
+############################################################################
+5. Функции за дата и време
+Помагат при работа с дати и часове.
+
+Функция	Описание	Пример
+NOW()	Връща текущата дата и час.	NOW() → 2024-12-16 12:30:45
+CURDATE()	Връща текущата дата (без час).	CURDATE() → 2024-12-16
+CURTIME()	Връща текущото време (без дата).	CURTIME() → 12:30:45
+YEAR(x)	Извлича годината от дата x.	YEAR('2024-12-16') → 2024
+MONTH(x)	Извлича месеца от дата x.	MONTH('2024-12-16') → 12
+DAY(x)	Извлича деня от дата x.	DAY('2024-12-16') → 16
+DATEDIFF(x, y)	Връща разликата в дни между две дати x и y.	DATEDIFF('2024-12-16', '2024-12-10') → 6
