@@ -1,0 +1,43 @@
+1. Hypothesis Testing
+Hypothesis testing is a process used to evaluate assumptions about a population based on a sample of data. 
+The main idea is to formulate a hypothesis, collect data, and decide whether the data supports or contradicts the hypothesis.
+
+Null Hypothesis (H₀): This is the default hypothesis assumed to be true. For example, "there is no difference between the groups."
+Alternative Hypothesis (H₁): This is the opposite of the null hypothesis, which we assume if the null hypothesis is rejected.
+P-value: It shows the probability of obtaining results as extreme or more extreme than the observed results, assuming the null hypothesis is true. 
+Typically, if the p-value is less than a chosen threshold (e.g., 0.05), the null hypothesis is rejected.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+2. Correlation
+Correlation measures the degree to which two variables move together. It indicates whether one variable increases as the other increases or decreases.
+
+Positive Correlation: When one variable increases, the other increases as well.
+Negative Correlation: When one variable increases, the other decreases.
+Correlation Coefficient (r): It measures the strength of the relationship between two variables, ranging from -1 to 1. 
+A value close to 1 indicates a strong positive relationship, while a value close to -1 indicates a strong negative relationship.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+3. Regression
+Regression is a method for modeling the relationship between a dependent variable and one or more independent variables. It is used to predict the dependent variable based on the independent variables.
+
+Linear Regression: This is the simplest form, where a line is calculated that best fits the relationship between the variables. 
+The formula for linear regression is typically in the form:
+
+𝑦 = 𝑏0 + 𝑏1 ⋅ 𝑥  
+
+where b0 is the intercept of the line, and 𝑏1 is the slope.
+
+Multiple Regression: This is used when there are multiple independent variables to predict the dependent variable.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+4. Distributions
+Distributions describe how the values of variables are spread in a dataset. They form the foundation for statistical testing and modeling.
+
+- Normal Distribution: This is the most common distribution, characterized by a bell-shaped curve. 
+Many statistical tests are based on the assumption that data follow a normal distribution.
+  
+- Probability Distribution: It shows the likelihood of each value of a variable occurring.
+Examples include the Bernoulli distribution and Poisson distribution.
