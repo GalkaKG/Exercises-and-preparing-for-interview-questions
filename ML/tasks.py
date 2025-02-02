@@ -15,8 +15,9 @@ def moving_average(series, window_size):
     """
     if not series or window_size <= 0:
         raise ValueError("Series must not be empty and window_size must be greater than 0")
-    
-    return np.convolve(series, np.ones(window_size) / window_size, mode='valid')  # array([1., 1., 1.]) / 3
+
+    # np.ones(window_size) / window_size   -->  array([1., 1., 1.]) / 3
+    return np.convolve(series, np.ones(window_size) / window_size, mode='valid')  
 
 # Example usage
 time_series = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
