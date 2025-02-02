@@ -36,7 +36,7 @@ Establishing causation requires more rigorous testing, often through controlled 
 
 -------------------------------------------------------------------------------------------------------------
 
-Handling Missing Data in a Dataset
+# Handling Missing Data in a Dataset
 
 Handling missing data is a crucial step in data preprocessing. Here are some common strategies:
 
