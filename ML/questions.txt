@@ -36,3 +36,32 @@ Establishing causation requires more rigorous testing, often through controlled 
 
 -------------------------------------------------------------------------------------------------------------
 
+Handling Missing Data in a Dataset
+
+Handling missing data is a crucial step in data preprocessing. Here are some common strategies:
+
+1. Remove Missing Data:
+
+Drop Rows: If the number of missing values is small, you can drop the rows with missing values.
+df.dropna(inplace=True)
+
+Drop Columns: If a column has a significant number of missing values, you might drop the entire column.
+df.drop(columns=['column_name'], inplace=True)
+
+2. Impute Missing Data:
+
+Mean/Median/Mode Imputation: Replace missing values with the mean, median, or mode of the column.
+df['column_name'].fillna(df['column_name'].mean(), inplace=True)
+
+Forward/Backward Fill: Use the previous or next value to fill missing data, especially useful in time series.
+df['column_name'].fillna(method='ffill', inplace=True)  # Forward fill
+df['column_name'].fillna(method='bfill', inplace=True)  # Backward fill
+
+
+Interpolation: Use interpolation methods to estimate missing values.
+df['column_name'].interpolate(method='linear', inplace=True)
+
+3. Predictive Imputation:
+Use machine learning models to predict and fill missing values based on other features in the dataset.
+
+------------------------------------------------------------------------------------------------------
