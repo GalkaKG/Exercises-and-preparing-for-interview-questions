@@ -12,7 +12,7 @@ def say_hello():
 say_hello()
 
 
-Output:
-Before the function call
-Hello!
-After the function call
+# Output:
+# Before the function call
+# Hello!
+# After the function call
