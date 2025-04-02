@@ -1,0 +1,7 @@
+HTTP vs. HTTPS
+
+HTTP (Hypertext Transfer Protocol) is a protocol used for transferring data over the web. It's not secure, and data is sent in plain text.
+
+HTTPS (Hypertext Transfer Protocol Secure) is the secure version of HTTP. It uses SSL/TLS to encrypt the data during transmission, ensuring privacy and data integrity.
+
+
