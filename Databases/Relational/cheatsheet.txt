@@ -5,3 +5,11 @@ Atomicity: A transaction is atomic, meaning it is either fully completed or full
 Consistency: A transaction takes the database from one valid state to another, ensuring data integrity constraints are met.
 Isolation: Transactions are isolated from each other, meaning concurrent transactions do not interfere with one another (even if they are operating on the same data).
 Durability: Once a transaction is committed, it will remain so, even in the case of system crashes.
+
+
+What is a Stored Procedure?
+A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
+
+So if you have an SQL query that you write over and over again, save it as a stored procedure, and then just call it to execute it.
+
+You can also pass parameters to a stored procedure, so that the stored procedure can act based on the parameter value(s) that is passed.
