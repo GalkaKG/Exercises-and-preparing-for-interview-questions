@@ -1,0 +1,6 @@
+Embedding in the context of machine learning models and neural networks (NNs) is a technique that represents a method for transforming discrete, categorical, 
+or textual data into fixed-length numerical vectors that capture meaningful features or relationships between these data.
+
+Why is it used?
+Categorical or textual data are difficult to use directly in neural networks. Embedding allows this data to be represented in a way that facilitates model training.
+Embeddings can capture semantic relationships between entities, e.g., words with similar meanings will be located close to each other in the embedding space.
