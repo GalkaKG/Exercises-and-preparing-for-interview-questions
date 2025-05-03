@@ -1,0 +1,71 @@
+Ensembles in machine learning are methods that combine multiple individual models to improve overall performance and prediction accuracy.
+The main idea is that by combining the outputs of different models, the errors that each model might make individually can be reduced.
+
+Types of Ensemble Methods
+
+Bagging (Bootstrap Aggregating):
+    Main idea: Reduces model variance by combining predictions from multiple versions of the same model, each trained on different random subsets of the data.
+
+    Example: Random Forest
+        - Creates many decision trees, each trained on a random subset of the data.
+        - The final result is the average (for regression) or majority vote (for classification) of all trees.
+
+Boosting:
+    Main idea: Reduces bias by creating a sequence of models, where each new model focuses on correcting the errors made by the previous one.
+
+    Examples:
+        - AdaBoost: Adds weight to incorrectly classified examples and trains new models to correct those mistakes.
+
+        - Gradient Boosting: Optimizes errors by minimizing residuals in sequential models.
+
+        - XGBoost and LightGBM: Improved versions of Gradient Boosting that are faster and more efficient.
+
+Stacking:
+    - Main idea: Combines the outputs of several different models using another model (a meta-model), which is trained on the predictions of the base models.
+    - Example: Using linear regression or a neural network as a meta-model to combine predictions from Random Forest, Gradient Boosting, and Support Vector Machines.
+
+Voting:
+    Main idea: Combines predictions from several models through a voting mechanism.
+
+    Types:
+        - Majority voting: For classification – selects the class most frequently predicted by the models.
+        - Averaging: For regression – uses the average value of the predictions.
+
+Why Are Ensembles Useful?
+- They reduce errors:
+    - Bias: Boosting helps handle underfitting models.
+    - Variance: Bagging helps handle overfitting models.
+
+- They improve stability:
+    - Ensembles reduce the impact of randomness that may affect an individual model.
+
+- They offer better generalization:
+    - Ensemble models often complement each other and capture different aspects of the data.
+
+When to Use Ensembles?
+- When dealing with complex problems and individual models do not achieve sufficient accuracy.
+- When trying to reduce overfitting or underfitting.
+- In competitions like those on Kaggle, ensemble methods often lead to top results.
+
+
+Example with Random Forest (Bagging) in Python:
+
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+# Load data
+data = load_iris()
+X, y = data.data, data.target
+
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Create Random Forest model
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+# Evaluate accuracy
+predictions = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test, predictions))

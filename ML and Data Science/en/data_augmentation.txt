@@ -1,0 +1,38 @@
+Data augmentation is a technique in machine learning used to increase the size and diversity of the training dataset by applying transformations to the existing data. It is particularly useful when the available data is limited or when we want to improve the model’s generalization ability by reducing overfitting.
+
+Goals of Data Augmentation
+Dataset expansion: Creating additional examples by modifying existing data.
+
+Improving generalization: Helping the model become more robust to small changes or variations in the data.
+
+Reducing overfitting: A larger and more diverse dataset helps prevent the model from over-adapting to the training data.
+
+Examples of Data Augmentation
+1. For Images:
+
+Geometric transformations:
+- Rotation
+- Scaling
+- Translation
+- Flipping
+- Cropping
+
+Color modifications:
+- Brightness adjustment
+- Contrast adjustment
+- Saturation adjustment
+
+Noise and distortions:
+- Adding Gaussian noise
+- Blurring
+- Perspective warping
+
+2. For Text:
+- Synonym replacement: Replacing words with their synonyms.
+- Deletion or reordering: Removing or changing the order of words in sentences.
+- Back-translation: Translating the text to another language and back to the original.
+
+3. For Audio:
+- Changing the speed of the audio recording.
+- Adding noise.
+- Pitch shifting (changing the tone).

@@ -1,0 +1,551 @@
+Difference between Supervised, Unsupervised and Reinforcement Learning
+Type ML Description Examples
+Supervised Learning The model is trained based on labeled data (input-output). The goal is to predict an output value for new data.	
+- Credit risk (prediction of "default" or "non-default").
+- Outflow prediction.
+Unsupervised Learning The model finds hidden structures in the data that have no labels (input only).	
+- Customer grouping (segmentation).
+- Dimensionality reduction (PCA).
+Reinforcement Learning The model learns by interacting with the environment and receiving rewards/punishments for its actions.	
+- Credit portfolio optimization.
+- Commercial strategies.
+
+
+#############################################
+Supervised Learning Algorithms
+
+##### Regression
+
+1.Linear Regression:
+Used to predict continuous values (e.g. house price).
+
+What is the hypothesis in linear regression?
+The hypothesis is a linear function that models the relationship between the input variables (features) and the output variable (target):
+
+How is the error (MSE/MAE) estimated?
+MSE (Mean Squared Error): the average of the squared errors:
+MAE (Mean Absolute Error): The mean absolute value of the errors:
+
+How are the coefficients interpreted?
+The coefficients show how changing the corresponding characteristic by one affects the target variable, while fixing the other characteristics.
+
+2.Logistic Regression:
+Used for classification (e.g. binary classification - credit approval).
+
+
+What is the function used for classification?
+Logistic regression uses a sigmoid function to predict probabilities
+
+How do we interpret the output?
+The output is a probability of belonging to a class (usually binary). If the probability is above 0.5, class 1 is assumed, otherwise class 0.
+
+
+3. Polynomial Regression
+Polynomial regression is a statistical model that is an extension of linear regression, but using polynomial (stepwise) functions instead of just a linear relationship.
+When is polynomial regression used?
+✅ When the relationship between the variables is not linear
+✅ When predicting complex trends
+✅ In machine learning and statistics to analyze nonlinear dependencies
+
+
+##### Classification
+
+1.Decision Trees
+
+Suitable for understandable and easily interpretable models.
+
+What are the separation criteria?
+Gini Index: a measure of the purity of clusters. Smaller value = more homogeneous cluster.
+Entropy (Information Gain): A measure of the reduction of uncertainty in separation.
+
+What are the advantages and disadvantages?
+Advantages: Easy to understand and interpret, suitable for categorical and numerical data.
+Disadvantages: Can overfit if too deep.
+
+2.Random Forest
+A composite algorithm that combines multiple decision trees.
+
+How is overfitting reduced?
+Combines multiple independent trees and averages the results, which reduces data overfitting.
+
+How is the significance of features determined?
+Significance is calculated based on how many times and how effectively a feature is involved in splitting the data.
+
+Random Forest is a powerful machine learning algorithm that uses the concept of ensembles. Key features of Random Forest include:
+1. Ensemble method
+Random Forest combines multiple decision trees into a single ensemble model.
+The final result is based on:
+Average of predictions for regression problems.
+Majority voting for classification problems.
+2. Randomness.
+Randomness in data selection:
+Uses the Bagging (Bootstrap Aggregation) technique by training each tree on a randomly selected subset of the data.
+Randomness in feature selection:
+At each node split in the tree, Random Forest selects only a subset of the features instead of all.
+3. Overfitting reduction
+By combining many trees and using randomness in training, Random Forest reduces the risk of overfitting relative to single decision trees.
+4. Nonlinear dependencies
+Random Forest can capture complex and nonlinear dependencies between features as trees partition the data space into complex regions.
+5. Evaluation of the importance of the characteristics
+Random Forest can estimate the importance of features by measuring how often a feature is used to split a node in the trees.
+6. Internal validation with OOB (Out-of-Bag Error)
+The model uses data that was not selected in the random subset (out-of-bag data) to evaluate its accuracy without the need for a separate test set.
+7. Resistance to noise and missing data
+Random Forest is robust to:
+Noise in the data because the ensemble approach mutes the impact of erroneous predictions.
+Missing values, because splits in trees do not necessarily depend on all features.
+8. High dimensionality maintenance
+Random Forest works well with a large number of features by selecting subsets of them for each tree.
+Random Forest can be used to:
+Classification tasks (e.g. class prediction).
+Regression tasks (e.g. predicting numerical values).
+10. (e.g., regression algorithms for regression analysis (e.g., regression of parameters).
+Random Forest has several important hyperparameters that allow tuning the model to the task:
+n_estimators: the number of trees in the forest.
+max_depth: The maximum depth of each tree.
+max_features: the maximum number of features to use for partitioning.
+min_samples_split: The minimum number of examples required to split a node.
+min_samples_leaf: The minimum number of examples in a leaf.
+
+Disadvantages of Random Forest
+Greater training time compared to single trees.
+Difficult model interpretation as it combines multiple trees.
+Inefficient for extremely large data when there are not enough resources.
+
+
+3.SVM (Support Vector Machines)
+Support Vector Machines is a powerful and popular classification and regression algorithm that works by finding the optimal hyperplane that splits the data into different classes with maximum margin.
+
+Basic concepts
+Hyperplane:
+Hyperplane is the boundary that divides the data into two or more classes. For two-dimensional space it is a straight line, for three-dimensional it is a plane, and for higher dimensions it is a hyperplane.
+
+Margin:
+This is the distance between the hyperplane and the nearest points of each class. The goal of the SVM is to maximize this margin to provide the best resolution.
+
+Support Vectors:
+These are the points that are closest to the hyperplane and determine its position. They are critical to the model since if they are removed, the hyperplane will change.
+
+How does the SVM work?
+Linear SVM:
+The algorithm finds a linear hyperplane that separates the data.
+Suitable for linearly separable data.
+Nonlinear SVM:
+When the data cannot be linearly partitioned, a kernel trick is used.
+The kernel trick transforms the data into a higher dimensional space where it becomes linearly separable.
+Kernel Trick
+Kernel Trick is a technique used in algorithms such as Support Vector Machines (SVM) to deal with nonlinear dependencies in data. The basic idea is:
+Transfer to a higher dimensional space: instead of working in the original (often linear) feature space, Kernel Trick allows data to be transformed to a higher dimensional space where it can be more easily partitioned.
+No direct computation: instead of explicitly computing the coordinates of the new feature space, Kernel Trick computes only the scalar products between points in that space. This significantly saves time and resources.
+Example:
+The original data in 2D space may be nonlinearly separable.
+Kernel Trick transfers them to 3D space where they become linearly separable.
+Popular kernels:
+Linear Kernel: Works without transferring the data to a higher dimensionality.
+Polynomial Kernel: Uses a polynomial transformation of the data.
+Radial Basis Function (RBF): Models complex nonlinear dependencies.
+Sigmoid Kernel: Similar to the sigmoid function used in neural networks.
+
+Significance of 𝐶 and 𝛾 (gamma) parameters
+C (Regularization Parameter)
+Controls the exchange value between:
+Margin maximization: Seeks to create a model that separates classes as best as possible.
+Minimizing errors (classification error): Allows the model to ignore noise in the data.
+How it affects:
+Large 𝐶: Strives to classify all points correctly, but can lead to overfitting.
+Small 𝐶: Allows more errors, making the model more generalizable (underfitting).
+𝛾 (Gamma) in RBF and other nonlinear kernels
+Determines the influence of individual points:
+How each training data point affects the model.
+How it influences:
+Large 𝛾: Each point has a large influence, which can make the model very complex and sensitive to noise (overfitting).
+Small 𝛾: Each point affects a larger area, which can make the model rougher (underfitting).
+
+Intuition Example
+Imagine a problem of splitting into two classes (blue and red dots):
+𝐶: Controls whether we want to avoid errors (strict boundary) or are willing to tolerate errors (more flexible boundary).
+𝛾: Defines the "range" of influence of each point on the hyperplane. A large 
+𝛾 means that each point strongly "pulls" the boundary towards itself.
+Visual demonstration
+Large 𝐶 and 𝛾: The model will create a complex boundary that separates the points almost perfectly, but is susceptible to noise.
+Little 𝐶 and 𝛾: The model will have a simpler boundary, but may miss more complex dependencies.
+
+
+4.K-Nearest Neighbors (KNN)
+Classifies objects based on their nearest neighbors.
+How to choose the number of neighbors (k)?
+Little 𝑘:
+The model becomes sensitive to noise.
+May lead to overfitting because it only considers the nearest points.
+Example: if k=1, the algorithm just copies the nearest neighbor, even if it is noise.
+Large 𝑘:
+Increases the smoothness of the solution.
+Can lead to underfitting because it involves too many points that may not be related to the local structure.
+How to choose 𝑘:
+We try different values by cross-validation.
+Most commonly used values of 𝑘: small odd numbers (k=3,5,7) to avoid ties in classification.
+2. How does data scaling affect the KNN?
+Why is it important?
+KNN uses Euclidean distance (or other metric) to measure the proximity between points.
+If features have different scales (for example: one is in meters, another in millions of dollars), those with larger values dominate the distance.
+Solution:
+Normalization:
+Transform the features so that they are between 0 and 1.
+Formula: (x-min(x))/(max(x)-min(x)).
+Normalization:
+Transform the features with zero mean and unit standard deviation.
+Formula: (x-μ)/σ, where 𝜇 is the mean and 𝜎 is the standard deviation.
+Example:
+If we do not scale the data, a characteristic such as "years" can be ignored relative to "salary in thousands".
+
+Weaknesses of KNN
+Slow for large datasets:
+Requires calculation of distances for each point in prediction.
+Solution.
+Sensitive to noise and anomalies:
+Example: an anomalous point may change the classification for its neighbors.
+Works with all features:
+Does not take into account which features are relevant to the problem.
+
+
+5.Naive Bayes (Naive Bayes)
+Naive Bayes is a simple and efficient classification algorithm that is based on Bayes Theorem. It assumes that all features (features) are independent of each other, which is often not true in practice, but works well in many cases.
+
+How Naive Bayes Works:
+Training:
+- Calculate the probability of each category (class) P(C).
+- Calculate the probability of each feature given the category P(x∣C).
+
+Classification:
+- For new data, the posterior probability for each class is computed:
+
+P(C∣X)∝P(C)⋅P(x 1∣C)⋅P(x 2∣C)⋅...⋅P(x n∣C)
+The class with the highest probability is selected.
+
+#### Ensemble methods
+
+1.Gradient Boosting (e.g. XGBoost, LightGBM)
+Suitable for data races (like Kaggle).
+
+What is the difference between boosting and bagging?
+Boosting: builds models sequentially, with each new model correcting the errors of the previous one.
+Bagging: builds models in parallel and averages the results.
+
+What is the importance of learning rate?
+Controls the optimization steps. Small learning rate = more accurate but slower optimization.
+
+
+2.AdaBoost
+Algorithm to improve the performance of weak learners.
+
+How does the weight of the examples work?
+Idea: AdaBoost gives a different weight to each observation (example) in the data.
+Process:
+In the beginning, all examples receive equal weight.
+After each iteration (weak learner learning step):
+The examples that are misclassified are given a higher weight.
+Examples that are classified correctly receive a lower weight.
+The algorithm focuses the next weak learner on the difficult examples.
+Goal: Improve accuracy by correcting errors.
+2. Use cases for AdaBoost
+Strengths:
+Works well with tabular data (structured data).
+Suitable for binary and multiclass classification.
+Can be used for regression (with appropriate modification).
+Especially useful when we have a very weak training algorithm (e.g. Decision Stump - decision tree with one step).
+Examples of real cases:
+Credit risk (estimation of default probability).
+Fraud detection.
+Customer classification for marketing campaigns.
+3. How to select a weak learner?
+Most commonly used Decision Stumps:
+Decision tree with depth 1.
+Easy to learn and fast to compute.
+Weak learners need to be slightly better than random guess for AdaBoost to improve performance.
+4. How does AdaBoost work in steps?
+Initialization:
+All examples start with equal weights.
+Weak learner training:
+Weak learner is trained on the data, taking into account the current weights.
+Calculating the error:
+Calculate the error 𝜀: percentage of misclassified examples.
+Update weights:
+Examples misclassified receive a higher weight.
+Combining weak learners:
+Each weak learner receives a weight 𝛼 based on its accuracy.
+The final hypothesis is taking a majority of all weak learners.
+5. What are the weaknesses of AdaBoost?
+Sensitive to noise in the data:
+Examples with incorrect labels can get very high weights, leading to overfitting.
+Requires data quality and overfitting.
+6. What metrics should we use to evaluate AdaBoost?
+When classification is the goal:
+Accuracy, Precision, Recall, F1-Score.
+ROC-AUC to evaluate separation ability.
+When the goal is regression:
+Mean Absolute Error (MAE).
+Mean Squared Error (MSE).
+
+Algorithms for Unsupervised Learning
+
+#### Clustering
+
+1.K-Means
+Popular for clustering data into k clusters.
+
+How to choose the number of clusters (k)?
+By using the elbow method or silhouette coefficients.
+
+What is inertia?
+A measure of the distance between points in a cluster and the cluster center. Less inertia = more compact clusters.
+
+Why is the choice of initial centroid important?
+Poor choice can lead to local minima and irregular clusters.
+
+Elbow Method
+What is it?
+The "elbow" method visualizes how the value of the Within-Cluster Sum of Squares of Errors (WCSS) decreases as the number of clusters 𝑘 increases.
+WCSS measures the sum of squares of the distances between each point and the center of the cluster to which it belongs.
+The decrease of WCSS becomes slower after a certain value of 𝑘, which forms the "elbow" of the graph.
+
+2.Hierarchical Clustering
+Uses dendrograms to cluster data.
+You may be asked about: the difference between agglomerative and divisional clustering.
+
+3.DBSCAN (Density-Based Spatial Clustering)
+Groups objects based on density.
+cDBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a clustering algorithm that groups objects based on data density. 
+That is, it classifies points into groups (clusters) by considering their density in space. 
+The basic parameters of DBSCAN are:
+eps (epsilon): This is the radius of the environment around a point. It defines the distance within which objects are considered "adjacent". 
+The eps parameter must be set carefully depending on the data distribution.
+
+min_samples: This is the minimum number of points that must be in the vicinity of an object (defined by eps) for that object to be considered the center of a cluster. These points must form a "dense group" for the object to be classified as a cluster core.
+
+How the eps and min_samples parameters work:
+eps (epsilon): This is the maximum distance between two points for them to be part of the same cluster. If the distance between two points is greater than eps, 
+they will be treated as different clusters.
+min_samples: This is the minimum number of points that must be in the vicinity of a point (within the eps radius) for it to be part of a cluster. 
+These points form a "dense area", and if it does not contain enough points, the point will be considered "noise" (outlier) and will not be part of a cluster.
+
+What are the advantages of DBSCAN over K-Means:
+Does not require pre-setting the number of clusters: while in K-Means the number of clusters must be pre-set, in DBSCAN the number of clusters does not need to be pre-set as it determines them based on the density of the data.
+Better handling of complex cluster shapes: DBSCAN can detect clusters with arbitrary shapes, while K-Means works better for spherical or regularly spaced clusters.
+Noise robustness: DBSCAN can detect and ignore "noisy" points (outliers) that do not belong to any cluster, while K-Means is more sensitive to them and can classify them into irregular clusters.
+
+What are the main drawbacks of DBSCAN:
+Sensitivity to eps and min_samples parameter selection: if these parameters are not selected correctly, DBSCAN may classify all points as noise or not detect the correct clusters.
+Does not work well with data with different densities: If the clusters have very different densities, DBSCAN may have trouble detecting them correctly.
+Cannot be used for very high dimensionality: DBSCAN has problems working with very high dimensionality data due to the heuristic nature of the algorithm for finding nearby points.
+
+
+#### Dimensionality reduction
+
+1.Principal Component Analysis (PCA)
+Reduces the dimensionality of the data, preserving as much variance as possible.
+
+How are the components selected?
+Using explained variance, we select enough components to explain >= 95% of the total variance.
+
+What is the role of the covariance matrix?
+It is used to identify relationships between characteristics and to calculate principal components.
+
+
+2.t-SNE
+It is used to visualize high dimensional data in 2D/3D spaces.
+
+The t-SNE (t-Distributed Stochastic Neighbor Embedding) is a dimensionality reduction algorithm mainly used for visualization of high dimensional data in 2D or 3D spaces. It is particularly useful when working with large and complex datasets and wanting to preserve local relationships between data in a lower dimensionality (such as 2D or 3D).
+
+When is t-SNE suitable?
+Visualization of high-dimensional data: t-SNE is suitable when you have high-dimensional data (e.g., image features, text data, or other large feature sets) and want to visualize it in 2D or 3D space to identify structures such as clusters or anomalies.
+Cluster and group detection: t-SNE is very useful for visualizing complex structures when you have clusters of data that you want to detect or explore in a lower dimensionality. It can help to see how the data is distributed and if there are any logical groups.
+Similarity and dissimilarity analysis: t-SNE preserves local dependencies between points in the data, which means that points that are similar in the original space will also be similar in the reduced space. This makes it useful for detecting small but significant relationships in the data.
+
+What is perplexity and how does it affect t-SNE?
+Perplexity is a hyperparameter of t-SNE that controls the balance between local and global structures in the data. It is related to the number of neighbors that are considered when forming the probability distribution for each point.
+
+What is Perplexity:
+Perplexity can be viewed as a measure of the ambiguity or complexity of the distribution of neighbors for each point. In general, perplexity values between 5 and 50 are recommended, with lower values meaning you focus on local structure, while higher values retain more global information.
+Very high perplexity values can lead to overly simplistic results that do not reflect the true structure of the data well. On the other hand, very low values of perplexity can lead to over-focusing on small local structures and lose the global contextualization of the data.
+
+What are the limitations of t-SNE?
+Difficult to work with very large datasets: t-SNE is an algorithm that can be very slow for large datasets. Although there are optimizations, using t-SNE for huge datasets can be difficult due to memory and computation time requirements.
+No global structure: t-SNE focuses on preserving local structures in the data, which can result in global data structure (such as distances between clusters) not being well preserved.
+Difficult to interpret results: visualizations obtained by t-SNE are great for detecting interesting structures, but the interpretation of these structures is not always clear. This can make it difficult to understand exactly what the data is showing.
+
+Advantages of t-SNE:
+Preserves local dependencies: t-SNE is very effective in preserving the proximity between points in the original space and helps to visualize clusters and other local structures.
+Useful for visualizing complex data: t-SNE is very good for visualizing high dimensional data, generating 2D or 3D projections that are easy to understand and interpret visually.
+
+In conclusion:
+t-SNE is a powerful tool for visualizing high-dimensional data that helps to discover important structures and dependencies. However, it requires careful tuning of parameters such as perplexity to obtain optimal and interpretable results.
+
+
+
+Algorithms for Reinforcement Learning (RL)
+
+1.Q-Learning
+Algorithm for agent learning through rewards and punishments.
+
+2.Deep Q-Learning (DQN)
+An extension of Q-Learning using neural networks.
+
+
+Deep Learning Algorithms
+
+1.Neural Networks
+Used for complex tasks such as images and text.
+May ask you about: basic layers (Dense, Convolutional, Recurrent), optimizers (Adam, SGD), error function.
+
+2.Convolutional Neural Networks (CNNs)
+Suitable for images.
+You can feed them for: how are the convolutions, how do the filtrates work.
+
+3.Recurrent Neural Networks (RNNs)
+Suitable for sequences, like text or time series.
+
+
+##########################################################################################
+
+Metrics for evaluation of models
+
+Classification: Accuracy, Precision, Recall, F1-Score, ROC AUC.
+Regression: MSE, RMSE, MAE, R².
+
+##########################################################################################
+
+The difference between Decision Trees and Random Forest is based on their structure, learning method and behavior in different tasks. Here are the main differences:
+
+1. Basic structure
+Decision Tree:
+Contains only one tree that partitions the data based on rules.
+It works as a hierarchical structure in which each node partitions the data according to a particular characteristic.
+Random Forest:
+It uses multiple decision trees that work together as an ensemble model.
+The final result is a combination of the predictions of all trees (average for regression or voting for classification).
+2. Accuracy and robustness
+Decision Tree:
+Can easily adapt to training data, but this makes it susceptible to overfitting.
+It is sensitive to small changes in the data, which can lead to different tree structures.
+Random Forest:
+Reduces the problem of overfitting because it generalizes results from many trees.
+More robust and accurate when dealing with noisy and complex data.
+3. Randomness.
+Decision Tree:
+Uses all available data and features to partition the nodes.
+Random Forest:
+Adds randomness by:
+Random subsets of the data (Bagging).
+Random subsets of features when splitting nodes.
+4. Speed
+Decision Tree:
+Faster for learning and prediction as it uses only one tree.
+Random Forest:
+Slower to train and predict because it trains multiple trees and combines the results.
+5. Interpretation
+Decision Tree:
+Easily interpretable - you can track the decisions made by the model for a specific prediction.
+Random Forest:
+Difficult to interpret because it combines many trees, each with its own rules.
+6. Application
+Decision Tree:
+Good choice for small or medium data problems where accuracy is not critical.
+Random Forest:
+Suitable for complex tasks where accuracy and robustness are important, such as credit risk, churn prediction and fraud detection.
+7. Calculating Feature Importance
+Decision Tree:
+Shows which features are most important in a particular tree.
+Random Forest:
+Calculates the overall importance of features based on their contribution to all trees.
+Example
+Decision Tree:
+The model may make wrong predictions if the data structure is too complex or noisy.
+
+Random Forest:
+Combines multiple trees, muting the errors of individual trees and providing more accurate predictions.
+
+######################################################################################################
+How to choose the distance metric?
+
+Euclidean Distance: most commonly used.
+Suitable for data at the same scale.
+
+Manhattan distance:
+Uses the sum of the absolute differences between coordinates.
+Suitable if the data is scattered along the axes.
+
+Cosine similarity:
+Suitable for text data or vectors with large dimensionality.
+
+Machalanobis distance:
+Takes into account the correlation between features.
+Suitable for data with different distributions.
+
+#####################################################################################################
+
+Ensemble methods are techniques in machine learning that combine multiple models to achieve better overall performance than each of the individual models would achieve alone. The basic idea is that by combining several weaker models (weak learners), we can create a stronger and more robust model (strong learner).
+
+How do ensemble methods work?
+Ensemble methods rely on the following:
+Diversification: Using different models or different versions of the same model leads to less bias and more robustness.
+Combination: the results of all models are combined by aggregation (e.g. averaging or voting).
+
+Main types of ensemble methods
+
+Bagging (Bootstrap Aggregating):
+Basic idea: Reduces model variance by combining the results of several independent models trained on different subsets of the data.
+Example: Random Forest.
+Random Forest trains multiple decision trees, each running on a different random subset of the data and features.
+Reduces overfitting because it aggregates results by averaging (for regression) or voting (for classification).
+
+Boosting:
+Basic idea: Reduces model errors by sequentially training models, where each successive model corrects the errors of the previous one.
+Examples.
+These algorithms put more weight on misclassified or predicted points to improve accuracy.
+
+Stacking (Stacked Generalization):
+Basic idea: Combines different models through a metamodel that is trained to predict the final results based on the outputs of the underlying models.
+Example: Using Logistic Regression or Neural Network as a metamodel that combines results from Random Forest, SVM, and others.
+
+Why do ensembles reduce overfitting?
+Error Diversification: Different models make different errors, which are neutralized when aggregating.
+Variance reduction: Pooling results from multiple models leads to more robust and reliable predictions.
+Randomness: In Random Forest, for example, randomly selecting data and features when training trees reduces dependence on a particular dataset.
+
+########################################################################################################################
+
+Variance in the context of statistics and machine learning is a measure of the sparsity or diversity of the data. It indicates how much the values of a variable differ from the mean (average).
+
+Example:
+If we have a dataset of the heights of a group of people and calculate the average height, the variance will indicate how widely spaced these heights are around the average value. If most people have heights close to the mean, the variation will be small. If there is a large difference between the heights, the variation will be large.
+
+In Machine Learning and PCA:
+In Principal Component Analysis (PCA), the main goal is to reduce the dimensionality of the data while keeping as much variance as possible from the original data. That is, the new components should explain as much as possible of the information (variance) that is present in the original data.
+
+Variance here has to do with how spread out the data is in different directions and how to use those directions (new components) to explain the maximum amount of information in the data.
+In the context of PCA:
+PCA chooses the components that retain the most variance in the data and reduces the dimensions while trying to preserve the main features of the data. This is usually done by finding principal components that are linear combinations of the original features, and thus simplifying the data structure.
+
+#########################################################################################################################
+
+The theory of errors
+
+Bias (Systematic Error)
+Bias is an error that occurs due to oversimplification of the model. It fails to capture the complexity of the data and results in poor performance on both the training and test datasets.
+
+Characteristics of high bias:
+The model is too simple (underfitting).
+Inability to capture complex dependencies.
+Errors are high on both training and test data.
+Example of high bias:
+Using linear regression for data with nonlinear dependence.
+
+Variance
+Variance represents error that occurs due to overfitting to training data. The model is too complex and "adjusts" to noise in the data, resulting in poor generalizability to new (test) data.
+
+Characteristics of high variance:
+Model is overcomplex (overfitting).
+Excellent performance on training data.
+Poor performance on test data.
+Example of high variance:
+Using 10th order polynomial regression for data with linear dependence.
