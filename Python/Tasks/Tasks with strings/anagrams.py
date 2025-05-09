@@ -1,10 +1,8 @@
-s1 = "listen"
-s2 = "silent"
-
 def are_anagrams(s1, s2):
     """
     Check if two strings are anagrams of each other.        
-    An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+    An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, 
+    typically using all the original letters exactly once.
     """
     if len(s1) != len(s2):
         return False        
@@ -20,4 +18,6 @@ def are_anagrams(s1, s2):
     # If they are equal, the strings are anagrams
     return list1 == list2
 
+s1 = "listen"
+s2 = "silent"
 print(are_anagrams(s1, s2))  # True
