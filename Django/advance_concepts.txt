@@ -13,3 +13,9 @@ It performs separate queries and combines them in Python.
 Example:
 # Prefetch genres for each book in a single additional query
 books = Book.objects.prefetch_related('genres')
+
+3. only() and defer()
+Use these to load only the fields you need, avoiding large or unnecessary fields until accessed.
+Example:
+# Load only title and author; defer other fields
+books = Book.objects.only('title', 'author')
