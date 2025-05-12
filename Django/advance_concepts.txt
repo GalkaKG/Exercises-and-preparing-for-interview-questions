@@ -1,0 +1,15 @@
+Optimize sql queries with Django:
+
+1. select_related()
+Use this for ForeignKey and OneToOne fields to reduce the number 
+of queries by performing a SQL join.
+Example:
+# Efficiently fetch related author with each book
+books = Book.objects.select_related('author')
+
+2. prefetch_related()
+Use this for ManyToMany and reverse ForeignKey relationships. 
+It performs separate queries and combines them in Python.
+Example:
+# Prefetch genres for each book in a single additional query
+books = Book.objects.prefetch_related('genres')
