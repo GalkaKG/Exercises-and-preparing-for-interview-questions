@@ -19,3 +19,9 @@ Use these to load only the fields you need, avoiding large or unnecessary fields
 Example:
 # Load only title and author; defer other fields
 books = Book.objects.only('title', 'author')
+
+4. QuerySet.explain()
+Use .explain() to analyze how a queryset will be executed in the database. It shows the SQL execution plan, which helps you identify slow or inefficient queries.
+Example:
+# See how the query is executed by the database
+Book.objects.filter(author=some_author).explain()
